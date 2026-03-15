@@ -208,10 +208,12 @@ button {
   cursor: pointer;
   transition: opacity 0.6s ease, transform 0.6s ease;
 
-  /* Base text color: white */
-  color: #FFFFFF;
+  /* Breathing effect — uniform gold text */
+  color: #FFD700;
+  -webkit-text-fill-color: #FFD700;
 
-  /* Gold shimmer via background-clip: text */
+  /* === SHIMMER (commented out — uncomment to revert) ===
+  color: #FFFFFF;
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0.55) 0%,
@@ -226,12 +228,17 @@ button {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  === END SHIMMER === */
 }
 
 .is-ready .continue-text {
   opacity: 0.6;
   transform: translateY(0);
+  animation: textBreathe 4s ease-in-out infinite;
+
+  /* === SHIMMER (uncomment to revert) ===
   animation: textShimmer 8s linear infinite;
+  === END SHIMMER === */
 }
 
 .is-ready .poster-stage {
@@ -303,14 +310,18 @@ button {
   100% { opacity: 1; }
 }
 
-@keyframes textShimmer {
-  0% {
-    background-position: 200% center;
-  }
-  100% {
-    background-position: -200% center;
-  }
+/* Breathing effect — smooth uniform opacity cycle */
+@keyframes textBreathe {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.85; }
 }
+
+/* === SHIMMER KEYFRAMES (uncomment to revert) ===
+@keyframes textShimmer {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+=== END SHIMMER === */
 
 @keyframes posterFadeIn {
   from {
