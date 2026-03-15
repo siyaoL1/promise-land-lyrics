@@ -1,6 +1,6 @@
-# Promise Land Lyrics
+# The Promised Land Lyrics
 
-A lyrics website for the album *Promise Land*, featuring bilingual (Simplified/Traditional Chinese) lyrics with a dark, elegant design.
+A lyrics website for the album *The Promised Land*, featuring bilingual (Simplified/Traditional Chinese) lyrics with a dark, elegant design.
 
 ## Design Language
 
