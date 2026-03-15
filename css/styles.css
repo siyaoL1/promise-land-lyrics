@@ -592,7 +592,6 @@ button {
 .corner-art--top-left {
   top: 0;
   left: 0;
-  width: clamp(12rem, 24vw, 22rem);
 }
 
 .corner-art--bottom-right {
