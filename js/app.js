@@ -50,27 +50,38 @@ if (appShell && posterStage) {
 
         // Re-trigger the continue text fade-in
         const posterStage = document.querySelector('.poster-stage');
+        const continueText = document.querySelector('.continue-text');
+
         if (posterStage) {
           posterStage.classList.remove('is-ready');
-          const continueText = document.querySelector('.continue-text');
-          if (continueText) {
-            // Force opacity to 0 (should already be 0 without is-ready)
-            continueText.style.opacity = '0';
-            continueText.style.transition = 'opacity 1s ease';
-          }
-          // Re-add is-ready after a beat so the fade-in transition is visible
-          setTimeout(() => {
-            posterStage.classList.add('is-ready');
-            if (continueText) {
-              // The animation will take over, but we need the initial fade-in
-              continueText.style.opacity = '';
-              // Clean up after fade-in completes
-              setTimeout(() => {
-                continueText.style.transition = '';
-              }, 1200);
-            }
-          }, 600);
         }
+
+        if (continueText) {
+          // Ensure text is invisible and has no transition yet
+          continueText.style.transition = 'none';
+          continueText.style.opacity = '0';
+        }
+
+        // Wait for the browser to paint the invisible state
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            if (continueText) {
+              // Now add the transition and let is-ready trigger the fade-in
+              continueText.style.transition = 'opacity 1s ease';
+            }
+            if (posterStage) {
+              posterStage.classList.add('is-ready');
+            }
+
+            // Clean up inline styles after the fade-in completes
+            setTimeout(() => {
+              if (continueText) {
+                continueText.style.transition = '';
+                continueText.style.opacity = '';
+              }
+            }, 1200);
+          });
+        });
       }, 600); // Match the fade-out duration
     });
   }
