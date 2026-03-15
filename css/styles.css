@@ -208,15 +208,21 @@ button {
   cursor: pointer;
   transition: opacity 0.6s ease, transform 0.6s ease;
 
-  /* Shimmer: subtle gold sweep on transparent text */
+  /* Base text color: white */
+  color: #FFFFFF;
+
+  /* Gold shimmer via background-clip: text */
   background: linear-gradient(
     90deg,
-    rgba(212, 168, 67, 0.45) 0%,
-    rgba(255, 215, 0, 1) 15%,
-    rgba(212, 168, 67, 0.45) 30%,
-    rgba(212, 168, 67, 0.45) 100%
+    #FFFFFF 0%,
+    #FFFFFF 35%,
+    rgba(255, 215, 0, 0.4) 42%,
+    #FFD700 50%,
+    rgba(255, 215, 0, 0.4) 58%,
+    #FFFFFF 65%,
+    #FFFFFF 100%
   );
-  background-size: 400% 100%;
+  background-size: 300% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -298,8 +304,12 @@ button {
 }
 
 @keyframes textShimmer {
-  0% { background-position: 100% 0; }
-  100% { background-position: 0% 0; }
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: -100% 0;
+  }
 }
 
 @keyframes posterFadeIn {
