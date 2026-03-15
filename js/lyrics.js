@@ -6,7 +6,6 @@
   let songsData = null;
   let currentSong = null;
   let fontStep = 0;                 // –3 … +5
-  let readerMode = false;
   let isTraditional = false;
   let converterToTraditional = null;
   let converterToSimplified = null;
@@ -23,8 +22,6 @@
   const btnConvert  = overlay.querySelector('[data-action="convert"]');
   const btnSizeUp   = overlay.querySelector('[data-action="size-up"]');
   const btnSizeDown = overlay.querySelector('[data-action="size-down"]');
-  const btnReader   = overlay.querySelector('[data-action="reader"]');
-  const fabReader   = overlay.querySelector('.lyrics-fab');
 
   /* ── data loading ──────────────────────────────────────────── */
   fetch('data/songs.json')
@@ -109,19 +106,12 @@
     content.style.fontSize = 'calc(var(--lyrics-base-size) + ' + (fontStep * 0.15) + 'rem)';
   }
 
-  /* ── reader mode ───────────────────────────────────────────── */
-  function toggleReader() {
-    readerMode = !readerMode;
-    overlay.classList.toggle('reader-mode', readerMode);
-  }
-
   /* ── reset on open ─────────────────────────────────────────── */
   function resetControls() {
-    fontStep = 0; readerMode = false;
+    fontStep = 0;
     isTraditional = false;
     if (btnConvert) btnConvert.textContent = '简/繁';
     content.style.fontSize = '';
-    overlay.classList.remove('reader-mode');
   }
 
   /* ── event wiring ──────────────────────────────────────────── */
@@ -129,7 +119,6 @@
   btnConvert.addEventListener('click', toggleChineseVariant);
   btnSizeUp.addEventListener('click', () => changeSize(1));
   btnSizeDown.addEventListener('click', () => changeSize(-1));
-  btnReader.addEventListener('click', toggleReader);
-  fabReader.addEventListener('click', toggleReader);
+
 })();
 
