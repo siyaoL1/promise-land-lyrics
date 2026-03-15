@@ -32,6 +32,7 @@
   /* ── open / close ──────────────────────────────────────────── */
   window.addEventListener('open-song', (e) => {
     const id = e.detail && e.detail.songId;
+    if (id) sessionStorage.setItem('lastSongId', id);
     if (!songsData || !id) return;
     currentSong = songsData.find(s => s.id === id);
     if (!currentSong) return;
