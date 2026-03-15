@@ -234,7 +234,7 @@ button {
 
 .is-ready .continue-text {
   opacity: 0.85;
-  animation: textBreathe 5s ease-in-out 1.2s infinite;
+  animation: textBreathe 3s ease-in-out 1.2s infinite;
 
   /* === SHIMMER (uncomment to revert) ===
   animation: textShimmer 8s linear infinite;
