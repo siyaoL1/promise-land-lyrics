@@ -125,46 +125,40 @@ button {
     0 0.35rem 1.2rem rgba(0, 0, 0, 0.45);
 }
 
-.continue-button {
+.continue-text {
+  margin: 0;
   opacity: 0;
   transform: translateY(1.4rem);
-  padding: 0.95rem 2rem;
-  border: 0.08rem solid rgba(212, 168, 67, 0.5);
-  border-radius: 999rem;
-  background: rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(0.8rem);
-  color: var(--text);
-  font-size: 0.82rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
+  color: rgba(232, 232, 232, 0.6);
+  font-size: clamp(0.85rem, 0.8rem + 0.4vw, 1.05rem);
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  cursor: pointer;
-  box-shadow:
-    0 0 1.5rem rgba(212, 168, 67, 0.08),
-    inset 0 0.06rem 0 rgba(255, 255, 255, 0.1);
+  font-weight: 500;
+  background: linear-gradient(
+    90deg,
+    rgba(232, 232, 232, 0.4) 0%,
+    rgba(232, 232, 232, 0.4) 40%,
+    rgba(212, 168, 67, 0.9) 50%,
+    rgba(232, 232, 232, 0.4) 60%,
+    rgba(232, 232, 232, 0.4) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   transition:
     opacity var(--timing-fast) ease,
-    transform var(--timing-fast) ease,
-    background 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
+    transform var(--timing-fast) ease;
 }
 
-.continue-button:hover,
-.continue-button:focus-visible {
-  background: rgba(212, 168, 67, 0.12);
-  border-color: rgba(212, 168, 67, 0.7);
-  box-shadow:
-    0 0 2rem rgba(212, 168, 67, 0.2),
-    0 0 0 0.25rem rgba(212, 168, 67, 0.08),
-    inset 0 0.06rem 0 rgba(255, 255, 255, 0.12);
-  outline: none;
-}
-
-.is-ready .continue-button {
+.is-ready .continue-text {
   opacity: 1;
   transform: translateY(0);
-  animation: pulse 2.3s ease-in-out infinite;
+  animation: textShimmer 2.5s ease-in-out infinite;
+}
+
+.is-ready .poster-stage {
+  cursor: pointer;
 }
 
 .content-overlay {
@@ -212,13 +206,18 @@ button {
   z-index: 0;
   background:
     radial-gradient(ellipse 60% 40% at 50% 45%, rgba(212, 168, 67, 0.04) 0%, transparent 70%);
-  animation: shimmer 4s ease-in-out infinite alternate;
+  animation: stageGlow 4s ease-in-out infinite alternate;
   pointer-events: none;
 }
 
-@keyframes shimmer {
+@keyframes stageGlow {
   0% { opacity: 0.4; }
   100% { opacity: 1; }
+}
+
+@keyframes textShimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
 }
 
 @keyframes posterFadeIn {
@@ -232,15 +231,7 @@ button {
   }
 }
 
-@keyframes pulse {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-0.35rem);
-  }
-}
+
 
 @keyframes cardFadeIn {
   from {

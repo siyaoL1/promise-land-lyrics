@@ -1,14 +1,15 @@
 const appShell = document.querySelector('.app-shell');
-const continueButton = document.querySelector('.continue-button');
+const posterStage = document.querySelector('.poster-stage');
 
-if (appShell && continueButton) {
+if (appShell && posterStage) {
   window.addEventListener('load', () => {
     window.setTimeout(() => {
       appShell.classList.add('is-ready');
     }, 2400);
   });
 
-  continueButton.addEventListener('click', () => {
+  posterStage.addEventListener('click', () => {
+    if (appShell.dataset.state !== 'poster') return;
     appShell.classList.add('is-entered');
     appShell.dataset.state = 'content';
     initBrowseUI();
