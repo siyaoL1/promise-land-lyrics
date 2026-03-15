@@ -10,7 +10,7 @@
   --content-width: min(88vw, 42rem);
   --radius-lg: 1.75rem;
   --radius-md: 1.2rem;
-  --timing-slow: 2.6s;
+  --timing-slow: 1.6s;
   --timing-fast: 0.8s;
   --font-display: "Playfair Display", "Trebuchet MS", "Avenir Next", "Segoe UI", serif;
   --font-body: "Inter", "Helvetica Neue", "PingFang SC", "Noto Sans SC", sans-serif;
@@ -128,33 +128,34 @@ button {
 .continue-text {
   margin: 0;
   opacity: 0;
-  transform: translateY(1.4rem);
-  color: rgba(232, 232, 232, 0.6);
-  font-size: clamp(0.85rem, 0.8rem + 0.4vw, 1.05rem);
-  letter-spacing: 0.2em;
+  transform: translateY(0.8rem);
+  font-family: var(--font-display);
+  font-size: clamp(0.75rem, 0.7rem + 0.3vw, 0.9rem);
+  font-weight: 400;
+  letter-spacing: 0.35em;
   text-transform: uppercase;
-  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+
+  /* Shimmer: subtle gold sweep on transparent text */
   background: linear-gradient(
     90deg,
-    rgba(232, 232, 232, 0.4) 0%,
-    rgba(232, 232, 232, 0.4) 40%,
-    rgba(212, 168, 67, 0.9) 50%,
-    rgba(232, 232, 232, 0.4) 60%,
-    rgba(232, 232, 232, 0.4) 100%
+    rgba(200, 200, 200, 0.35) 0%,
+    rgba(200, 200, 200, 0.35) 35%,
+    rgba(232, 210, 160, 1) 50%,
+    rgba(200, 200, 200, 0.35) 65%,
+    rgba(200, 200, 200, 0.35) 100%
   );
-  background-size: 200% 100%;
+  background-size: 250% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  transition:
-    opacity var(--timing-fast) ease,
-    transform var(--timing-fast) ease;
 }
 
 .is-ready .continue-text {
   opacity: 1;
   transform: translateY(0);
-  animation: textShimmer 2.5s ease-in-out infinite;
+  animation: textShimmer 3s ease-in-out infinite;
 }
 
 .is-ready .poster-stage {

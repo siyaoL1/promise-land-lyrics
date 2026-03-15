@@ -5,7 +5,7 @@ if (appShell && posterStage) {
   window.addEventListener('load', () => {
     window.setTimeout(() => {
       appShell.classList.add('is-ready');
-    }, 2400);
+    }, 1200);
   });
 
   posterStage.addEventListener('click', () => {
