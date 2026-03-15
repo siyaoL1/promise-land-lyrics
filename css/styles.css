@@ -323,8 +323,8 @@ button {
 }
 
 @keyframes textShimmer {
-  0% { background-position: 150% center; }
-  100% { background-position: -150% center; }
+  0% { background-position: 300% center; }
+  100% { background-position: -300% center; }
 }
 
 @keyframes posterFadeIn {
