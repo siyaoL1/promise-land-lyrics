@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="The Promise Land concert lyrics experience by Lionzed."
+    />
+    <title>The Promise Land</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css" rel="stylesheet">
+    <link rel="preload" as="image" href="assets/poster.jpg" />
+    <script src="https://cdn.jsdelivr.net/npm/opencc-js@1.0.5/dist/umd/full.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.10.1/styles/overlayscrollbars.min.css">
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- SVG filter: remap black → gold (#d4a843), white → white, preserve alpha -->
+    <svg style="position:absolute;width:0;height:0" aria-hidden="true">
+      <filter id="gold-tint" color-interpolation-filters="sRGB">
+        <feColorMatrix type="matrix" values="
+          0.169 0 0 0 0.831
+          0 0.341 0 0 0.659
+          0 0 0.737 0 0.263
+          0 0 0 1 0
+        "/>
+      </filter>
+    </svg>
+    <main class="app-shell" data-state="poster">
+      <img src="assets/Top Left Corner 2.png" class="corner-art corner-art--top-left" alt="" aria-hidden="true">
+      <img src="assets/Bottom Right Corner 2.png" class="corner-art corner-art--bottom-right" alt="" aria-hidden="true">
+      <section class="poster-stage" aria-label="The Promise Land poster landing screen">
+        <div class="poster-backdrop" aria-hidden="true">
+          <img src="assets/poster.jpg" alt="" class="poster-image" />
+          <div class="poster-vignette"></div>
+        </div>
+
+        <div class="poster-copy">
+          <p class="eyebrow">Lionzed</p>
+          <h1 class="title">The Promise Land</h1>
+          <p class="continue-text">Click to Continue</p>
+        </div>
+
+        <section class="content-overlay" id="main-content" aria-label="Main content">
+          <!-- Search bar — outside content-shell so it stays fixed -->
+          <div class="search-bar">
+            <button class="search-back" type="button" aria-label="Back to landing page">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <input
+              type="search"
+              class="search-input"
+              placeholder="Search songs or lyrics…"
+              aria-label="Search songs or lyrics"
+              autocomplete="off"
+            />
+          </div>
+
+          <div class="content-shell" aria-hidden="true">
+            <!-- Unified song list -->
+            <div class="song-list" id="song-list" role="list"></div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <!-- Lyrics reader overlay -->
+    <div id="lyrics-overlay" class="lyrics-overlay" aria-hidden="true" role="dialog" aria-label="Lyrics reader">
+      <header class="lyrics-header">
+        <button class="lyrics-back" data-action="back" type="button" aria-label="Back to song list"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18" height="18"><polyline points="15 18 9 12 15 6"/></svg></button>
+        <span class="lyrics-title"></span>
+      </header>
+      <div class="lyrics-body">
+        <div class="lyrics-content"></div>
+      </div>
+      <div class="lyrics-controls">
+        <button data-action="convert" type="button" aria-label="Switch to traditional Chinese">简/繁</button>
+        <button data-action="size-down" type="button" aria-label="Decrease text size">A−</button>
+        <button data-action="size-up" type="button" aria-label="Increase text size">A+</button>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/overlayscrollbars@2.10.1/browser/overlayscrollbars.browser.es6.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/lyrics.js"></script>
+  </body>
+</html>

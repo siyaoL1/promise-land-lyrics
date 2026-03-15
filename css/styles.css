@@ -438,7 +438,7 @@ button {
   font-size: 0.95rem;
   font-weight: 400;
   color: var(--text);
-  opacity: 0.6;
+  opacity: 0.8;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
