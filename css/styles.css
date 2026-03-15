@@ -636,7 +636,7 @@ button {
 
 .search-back {
   position: absolute;
-  left: clamp(0.5rem, 2vw, 1.5rem);
+  left: calc(4.8vw + clamp(2rem, 5vw, 4rem));
   display: flex;
   align-items: center;
   justify-content: center;
