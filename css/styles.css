@@ -214,13 +214,13 @@ button {
   /* Gold shimmer via background-clip: text */
   background: linear-gradient(
     90deg,
-    #FFFFFF 0%,
-    #FFFFFF 35%,
-    rgba(255, 215, 0, 0.4) 42%,
-    #FFD700 50%,
-    rgba(255, 215, 0, 0.4) 58%,
-    #FFFFFF 65%,
-    #FFFFFF 100%
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(255, 255, 255, 0.55) 40%,
+    rgba(255, 215, 0, 0.7) 48%,
+    rgba(255, 215, 0, 1) 50%,
+    rgba(255, 215, 0, 0.7) 52%,
+    rgba(255, 255, 255, 0.55) 60%,
+    rgba(255, 255, 255, 0.55) 100%
   );
   background-size: 300% 100%;
   -webkit-background-clip: text;
@@ -229,9 +229,9 @@ button {
 }
 
 .is-ready .continue-text {
-  opacity: 1;
+  opacity: 0.6;
   transform: translateY(0);
-  animation: textShimmer 3s linear infinite;
+  animation: textShimmer 8s linear infinite;
 }
 
 .is-ready .poster-stage {
@@ -305,10 +305,10 @@ button {
 
 @keyframes textShimmer {
   0% {
-    background-position: 100% 0;
+    background-position: 200% center;
   }
   100% {
-    background-position: -100% 0;
+    background-position: -200% center;
   }
 }
 
@@ -341,6 +341,7 @@ button {
   z-index: 100;
   display: flex;
   flex-direction: column;
+  padding: 2.5rem 0 2rem;
   background: rgba(10, 10, 10, 0.4);
   backdrop-filter: blur(1.2rem);
   opacity: 0;
