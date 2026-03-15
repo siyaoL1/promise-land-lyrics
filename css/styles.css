@@ -464,7 +464,7 @@ button {
 .lyrics-content {
   max-width: var(--content-width);
   margin: 0 auto;
-  padding: 3rem 1.25rem 35vh;
+  padding: 1rem 1.25rem 35vh;
   font-family: var(--font-display);
   font-size: var(--lyrics-base-size);
   line-height: 1.8;
@@ -636,7 +636,7 @@ button {
 
 .search-back {
   position: absolute;
-  left: calc(4.8vw + clamp(2rem, 5vw, 4rem));
+  left: calc(0.4vw + clamp(2rem, 5vw, 4rem));
   display: flex;
   align-items: center;
   justify-content: center;
