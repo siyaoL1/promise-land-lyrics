@@ -208,40 +208,27 @@ button {
   cursor: pointer;
   transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1);
 
-  /* Breathing effect — uniform gold text */
-  color: #B8860B;
-  -webkit-text-fill-color: #B8860B;
-
-  /* Base glow — subtle, will be animated */
-  text-shadow:
-    0 0 0.6rem rgba(184, 134, 11, 0.15),
-    0 0 1.5rem rgba(139, 101, 8, 0.08);
+  /* Shimmer effect */
+  color: #FFFFFF;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(255, 255, 255, 0.55) 40%,
+    rgba(255, 215, 0, 0.7) 48%,
+    rgba(255, 215, 0, 1) 50%,
+    rgba(255, 215, 0, 0.7) 52%,
+    rgba(255, 255, 255, 0.55) 60%,
+    rgba(255, 255, 255, 0.55) 100%
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/*
- * Shimmer variant (disabled) — to re-enable, replace the breathing
- * styles above with:
- *
- *   color: #FFFFFF;
- *   background: linear-gradient(
- *     90deg,
- *     rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.55) 40%,
- *     rgba(255,215,0,0.7) 48%, rgba(255,215,0,1) 50%,
- *     rgba(255,215,0,0.7) 52%,
- *     rgba(255,255,255,0.55) 60%, rgba(255,255,255,0.55) 100%
- *   );
- *   background-size: 300% 100%;
- *   -webkit-background-clip: text;
- *   background-clip: text;
- *   -webkit-text-fill-color: transparent;
- *
- * And change the animation to: textShimmer 8s linear infinite;
- */
-
 .is-ready .continue-text {
-  animation:
-    continueFadeIn 1s cubic-bezier(0.4, 0, 0.2, 1) forwards,
-    textBreathe 4s cubic-bezier(0.45, 0.05, 0.55, 0.95) 1s infinite;
+  opacity: 1;
+  animation: textShimmer 8s linear infinite;
 }
 
 .is-ready .poster-stage {
@@ -333,36 +320,10 @@ button {
   100% { opacity: 1; }
 }
 
-/* Breathing effect — smooth uniform opacity cycle with animated glow */
-/* Fade in from invisible */
-@keyframes continueFadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+@keyframes textShimmer {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
 }
-
-/* Breathing effect — smooth opacity cycle with animated glow */
-@keyframes textBreathe {
-  0%, 100% {
-    opacity: 0.7;
-    text-shadow:
-      0 0 0.4rem rgba(184, 134, 11, 0.12),
-      0 0 1rem rgba(139, 101, 8, 0.06);
-  }
-  50% {
-    opacity: 0.95;
-    text-shadow:
-      0 0 0.8rem rgba(184, 134, 11, 0.35),
-      0 0 2rem rgba(139, 101, 8, 0.15);
-  }
-}
-
-/*
- * Shimmer keyframes (disabled) — to re-enable, use:
- *   @keyframes textShimmer {
- *     0% { background-position: 200% center; }
- *     100% { background-position: -200% center; }
- *   }
- */
 
 @keyframes posterFadeIn {
   from {
