@@ -201,7 +201,7 @@ button {
   opacity: 0;
   transform: none;
   font-family: var(--font-display);
-  text-shadow: 0 0 1.2rem rgba(255, 215, 0, 0.4), 0 0 2.5rem rgba(212, 168, 67, 0.2);
+  text-shadow: 0 0 1.2rem rgba(184, 134, 11, 0.5), 0 0 2.5rem rgba(139, 101, 8, 0.25);
   font-size: clamp(0.75rem, 0.7rem + 0.3vw, 0.9rem);
   font-weight: 400;
   letter-spacing: 0.12em;
@@ -234,7 +234,7 @@ button {
 
 .is-ready .continue-text {
   opacity: 0.85;
-  animation: textBreathe 2s ease-in-out infinite;
+  animation: textBreathe 5s ease-in-out infinite;
 
   /* === SHIMMER (uncomment to revert) ===
   animation: textShimmer 8s linear infinite;
