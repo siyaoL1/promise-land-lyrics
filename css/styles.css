@@ -216,33 +216,32 @@ button {
   text-shadow:
     0 0 0.6rem rgba(184, 134, 11, 0.15),
     0 0 1.5rem rgba(139, 101, 8, 0.08);
-
-  /* === SHIMMER (commented out — uncomment to revert) ===
-  color: #FFFFFF;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0.55) 0%,
-    rgba(255, 255, 255, 0.55) 40%,
-    rgba(255, 215, 0, 0.7) 48%,
-    rgba(255, 215, 0, 1) 50%,
-    rgba(255, 215, 0, 0.7) 52%,
-    rgba(255, 255, 255, 0.55) 60%,
-    rgba(255, 255, 255, 0.55) 100%
-  );
-  background-size: 300% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  === END SHIMMER === */
 }
 
-.is-ready .continue-text {
-  opacity: 1;
-  animation: textBreathe 4s cubic-bezier(0.45, 0.05, 0.55, 0.95) 1.2s infinite;
+/*
+ * Shimmer variant (disabled) — to re-enable, replace the breathing
+ * styles above with:
+ *
+ *   color: #FFFFFF;
+ *   background: linear-gradient(
+ *     90deg,
+ *     rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.55) 40%,
+ *     rgba(255,215,0,0.7) 48%, rgba(255,215,0,1) 50%,
+ *     rgba(255,215,0,0.7) 52%,
+ *     rgba(255,255,255,0.55) 60%, rgba(255,255,255,0.55) 100%
+ *   );
+ *   background-size: 300% 100%;
+ *   -webkit-background-clip: text;
+ *   background-clip: text;
+ *   -webkit-text-fill-color: transparent;
+ *
+ * And change the animation to: textShimmer 8s linear infinite;
+ */
 
-  /* === SHIMMER (uncomment to revert) ===
-  animation: textShimmer 8s linear infinite;
-  === END SHIMMER === */
+.is-ready .continue-text {
+  animation:
+    continueFadeIn 1s cubic-bezier(0.4, 0, 0.2, 1) forwards,
+    textBreathe 4s cubic-bezier(0.45, 0.05, 0.55, 0.95) 1s infinite;
 }
 
 .is-ready .poster-stage {
@@ -335,6 +334,13 @@ button {
 }
 
 /* Breathing effect — smooth uniform opacity cycle with animated glow */
+/* Fade in from invisible */
+@keyframes continueFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Breathing effect — smooth opacity cycle with animated glow */
 @keyframes textBreathe {
   0%, 100% {
     opacity: 0.7;
@@ -350,12 +356,13 @@ button {
   }
 }
 
-/* === SHIMMER KEYFRAMES (uncomment to revert) ===
-@keyframes textShimmer {
-  0% { background-position: 200% center; }
-  100% { background-position: -200% center; }
-}
-=== END SHIMMER === */
+/*
+ * Shimmer keyframes (disabled) — to re-enable, use:
+ *   @keyframes textShimmer {
+ *     0% { background-position: 200% center; }
+ *     100% { background-position: -200% center; }
+ *   }
+ */
 
 @keyframes posterFadeIn {
   from {
