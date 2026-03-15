@@ -14,6 +14,14 @@ if (appShell && posterStage) {
     appShell.dataset.state = 'content';
     initBrowseUI();
   });
+
+  const searchBack = document.querySelector('.search-back');
+  if (searchBack) {
+    searchBack.addEventListener('click', () => {
+      appShell.classList.remove('is-entered');
+      appShell.dataset.state = 'poster';
+    });
+  }
 }
 
 /* ── Browse UI ─────────────────────────────────── */
