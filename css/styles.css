@@ -357,8 +357,10 @@ button {
   display: flex;
   flex-direction: column;
   padding: 1.7rem 0 2rem;
-  background: rgba(10, 10, 10, 0.4);
+  background: rgba(10, 10, 10, 0.85);
   backdrop-filter: blur(1.2rem);
+  -webkit-backdrop-filter: blur(1.2rem);
+  will-change: opacity;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.8s ease;
@@ -569,7 +571,7 @@ button {
 .corner-art {
   position: fixed;
   z-index: 150;
-  width: clamp(8rem, 15vw, 14rem);
+  width: clamp(10rem, 20vw, 18rem);
   height: auto;
   pointer-events: none;
   opacity: 0;
