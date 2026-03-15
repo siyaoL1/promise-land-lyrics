@@ -424,7 +424,7 @@ button {
 
 .lyrics-back {
   justify-self: start;
-  margin-left: clamp(1rem, 3vw, 2.5rem);
+  margin-left: clamp(2rem, 5vw, 4rem);
   display: flex;
   align-items: center;
   justify-content: center;
