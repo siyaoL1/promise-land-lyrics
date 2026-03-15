@@ -19,8 +19,33 @@ if (appShell && posterStage) {
   if (searchBack) {
     searchBack.addEventListener('click', (e) => {
       e.stopPropagation();
-      appShell.classList.remove('is-entered');
-      appShell.dataset.state = 'poster';
+
+      // Step 1: Fade out the song list
+      const contentOverlay = document.querySelector('.content-overlay');
+      contentOverlay.style.transition = 'opacity 0.6s ease';
+      contentOverlay.style.opacity = '0';
+      contentOverlay.style.pointerEvents = 'none';
+
+      // Step 2: After fade-out completes, reset to landing page
+      setTimeout(() => {
+        appShell.classList.remove('is-entered');
+        appShell.dataset.state = 'poster';
+
+        // Reset the content overlay inline styles so CSS classes control it again
+        contentOverlay.style.transition = '';
+        contentOverlay.style.opacity = '';
+        contentOverlay.style.pointerEvents = '';
+
+        // Re-trigger the continue text fade-in
+        const posterStage = document.querySelector('.poster-stage');
+        if (posterStage) {
+          posterStage.classList.remove('is-ready');
+          // Small delay then re-add is-ready to trigger the shimmer animation fresh
+          setTimeout(() => {
+            posterStage.classList.add('is-ready');
+          }, 300);
+        }
+      }, 600); // Match the fade-out duration
     });
   }
 }
