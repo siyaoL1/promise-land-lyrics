@@ -52,10 +52,24 @@ if (appShell && posterStage) {
         const posterStage = document.querySelector('.poster-stage');
         if (posterStage) {
           posterStage.classList.remove('is-ready');
-          // Small delay then re-add is-ready to trigger the shimmer animation fresh
+          const continueText = document.querySelector('.continue-text');
+          if (continueText) {
+            // Force opacity to 0 (should already be 0 without is-ready)
+            continueText.style.opacity = '0';
+            continueText.style.transition = 'opacity 1s ease';
+          }
+          // Re-add is-ready after a beat so the fade-in transition is visible
           setTimeout(() => {
             posterStage.classList.add('is-ready');
-          }, 300);
+            if (continueText) {
+              // The animation will take over, but we need the initial fade-in
+              continueText.style.opacity = '';
+              // Clean up after fade-in completes
+              setTimeout(() => {
+                continueText.style.transition = '';
+              }, 1200);
+            }
+          }, 600);
         }
       }, 600); // Match the fade-out duration
     });
