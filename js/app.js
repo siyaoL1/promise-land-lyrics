@@ -135,6 +135,16 @@ if (appShell && posterStage) {
     });
   }
 
+  // Swipe left on song list to reopen last viewed song
+  if (contentOverlay) {
+    window.addSwipeForward(contentOverlay, () => {
+      const lastSongId = sessionStorage.getItem('lastSongId');
+      if (lastSongId) {
+        window.dispatchEvent(new CustomEvent('open-song', { detail: { songId: lastSongId } }));
+      }
+    });
+  }
+
   // Swipe left on poster to enter song list
   if (posterStage) {
     window.addSwipeForward(posterStage, () => {
