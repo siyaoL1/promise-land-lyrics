@@ -15,8 +15,8 @@ window.addSwipeBack = function(element, callback) {
     const deltaY = Math.abs(e.changedTouches[0].screenY - touchStartY);
     const deltaTime = Date.now() - touchStartTime;
 
-    // Right swipe: positive deltaX, min 80px, max 50px vertical, under 300ms
-    if (deltaX > 80 && deltaY < 50 && deltaTime < 300) {
+    // Right swipe: positive deltaX, min 60px, max 80px vertical, under 500ms
+    if (deltaX > 60 && deltaY < 80 && deltaTime < 500) {
       callback();
     }
   }, { passive: true });
@@ -39,8 +39,8 @@ window.addSwipeForward = function(element, callback) {
     const deltaY = Math.abs(e.changedTouches[0].screenY - touchStartY);
     const deltaTime = Date.now() - touchStartTime;
 
-    // Left swipe: negative deltaX, min 80px, max 50px vertical, under 300ms
-    if (deltaX < -80 && deltaY < 50 && deltaTime < 300) {
+    // Left swipe: negative deltaX, min 60px, max 80px vertical, under 500ms
+    if (deltaX < -60 && deltaY < 80 && deltaTime < 500) {
       callback();
     }
   }, { passive: true });
@@ -127,17 +127,15 @@ if (appShell && posterStage) {
     });
   }
 
-  // Swipe right to go back to landing page
-  const contentOverlay = document.querySelector('.content-overlay');
-  if (contentOverlay) {
-    window.addSwipeBack(contentOverlay, () => {
+  // Swipe gestures on song list — attach to .content-shell so touch events
+  // aren't swallowed by the scrollable child on mobile.
+  const contentShell = document.querySelector('.content-shell');
+  if (contentShell) {
+    window.addSwipeBack(contentShell, () => {
       if (searchBack) searchBack.click();
     });
-  }
 
-  // Swipe left on song list to reopen last viewed song
-  if (contentOverlay) {
-    window.addSwipeForward(contentOverlay, () => {
+    window.addSwipeForward(contentShell, () => {
       const lastSongId = sessionStorage.getItem('lastSongId');
       if (lastSongId) {
         window.dispatchEvent(new CustomEvent('open-song', { detail: { songId: lastSongId } }));
