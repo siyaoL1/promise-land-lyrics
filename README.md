@@ -4,11 +4,12 @@ A lyrics website for the album *Promise Land*, featuring bilingual (Simplified/T
 
 ## Design Language
 
-- Dark background with gold accent tones
-- Corner art with gold-tinted decorative vectors
-- Shimmer text effects and smooth fade transitions
-- Responsive layout optimized for mobile
-- Custom scrollbar and backdrop blur effects
+- **Modern minimal aesthetic** with clean, borderless UI components
+- **Consistent dark theme** with gold accent tones throughout
+- **Minimal visual movement** — subtle interactions with smooth fade transitions
+- **Borderless design** — no visible borders on buttons or containers
+- **Mobile-first responsive layout** optimized for touch interactions
+- **Decorative corner art** with gold-tinted vectors for visual framing
 
 ## Structure
 
