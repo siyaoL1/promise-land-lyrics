@@ -22,6 +22,30 @@ window.addSwipeBack = function(element, callback) {
   }, { passive: true });
 };
 
+/* ── Swipe-forward gesture helper ───────────────── */
+window.addSwipeForward = function(element, callback) {
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchStartTime = 0;
+
+  element.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+    touchStartTime = Date.now();
+  }, { passive: true });
+
+  element.addEventListener('touchend', (e) => {
+    const deltaX = e.changedTouches[0].screenX - touchStartX;
+    const deltaY = Math.abs(e.changedTouches[0].screenY - touchStartY);
+    const deltaTime = Date.now() - touchStartTime;
+
+    // Left swipe: negative deltaX, min 80px, max 50px vertical, under 300ms
+    if (deltaX < -80 && deltaY < 50 && deltaTime < 300) {
+      callback();
+    }
+  }, { passive: true });
+};
+
 const appShell = document.querySelector('.app-shell');
 const posterStage = document.querySelector('.poster-stage');
 
@@ -108,6 +132,13 @@ if (appShell && posterStage) {
   if (contentOverlay) {
     window.addSwipeBack(contentOverlay, () => {
       if (searchBack) searchBack.click();
+    });
+  }
+
+  // Swipe left on poster to enter song list
+  if (posterStage) {
+    window.addSwipeForward(posterStage, () => {
+      posterStage.click();
     });
   }
 }
