@@ -114,6 +114,21 @@
     content.style.fontSize = '';
   }
 
+  /* ── custom scrollbar for lyrics body ─────────────────────── */
+  if (typeof OverlayScrollbarsGlobal !== 'undefined') {
+    const { OverlayScrollbars } = OverlayScrollbarsGlobal;
+    const lyricsBody = overlay.querySelector('.lyrics-body');
+    if (lyricsBody) {
+      OverlayScrollbars(lyricsBody, {
+        scrollbars: {
+          theme: 'os-theme-gold',
+          autoHide: 'scroll',
+          autoHideDelay: 800,
+        }
+      });
+    }
+  }
+
   /* ── event wiring ──────────────────────────────────────────── */
   btnBack.addEventListener('click', closeLyrics);
   btnConvert.addEventListener('click', toggleChineseVariant);

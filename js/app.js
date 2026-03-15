@@ -113,3 +113,22 @@ function escapeHtml(str) {
   el.textContent = str;
   return el.innerHTML;
 }
+
+/* ── Custom scrollbar ─────────────────────────────── */
+
+// Initialize custom scrollbar on the main content overlay
+if (typeof OverlayScrollbarsGlobal !== 'undefined') {
+  const { OverlayScrollbars } = OverlayScrollbarsGlobal;
+
+  // Main song list scroll area
+  const contentOverlay = document.querySelector('.content-overlay');
+  if (contentOverlay) {
+    OverlayScrollbars(contentOverlay, {
+      scrollbars: {
+        theme: 'os-theme-gold',
+        autoHide: 'scroll',
+        autoHideDelay: 800,
+      }
+    });
+  }
+}
