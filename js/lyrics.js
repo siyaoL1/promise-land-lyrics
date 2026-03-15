@@ -5,13 +5,11 @@
   /* ── state ─────────────────────────────────────────────────── */
   let songsData = null;
   let currentSong = null;
-  let autoScrollSpeed = 0;          // 0 = off, 1 = slow, 2 = med, 3 = fast
-  let scrollRAF = null;
   let fontStep = 0;                 // –3 … +5
   let readerMode = false;
-
-  const SPEED_PX = [0, 0.4, 1.0, 2.2]; // px per frame at ~60 fps
-  const SPEED_LABELS = ['Off', 'Slow', 'Med', 'Fast'];
+  let isTraditional = false;
+  let converterToTraditional = null;
+  let converterToSimplified = null;
 
   /* ── DOM refs (created once) ───────────────────────────────── */
   const overlay = document.getElementById('lyrics-overlay');
@@ -22,7 +20,7 @@
   const controls = overlay.querySelector('.lyrics-controls');
 
   const btnBack     = overlay.querySelector('[data-action="back"]');
-  const btnScroll   = overlay.querySelector('[data-action="scroll"]');
+  const btnConvert  = overlay.querySelector('[data-action="convert"]');
   const btnSizeUp   = overlay.querySelector('[data-action="size-up"]');
   const btnSizeDown = overlay.querySelector('[data-action="size-down"]');
   const btnReader   = overlay.querySelector('[data-action="reader"]');
@@ -50,7 +48,6 @@
   function closeLyrics() {
     overlay.classList.remove('is-visible');
     overlay.setAttribute('aria-hidden', 'true');
-    stopAutoScroll();
     currentSong = null;
     window.dispatchEvent(new CustomEvent('close-song'));
   }
@@ -74,27 +71,36 @@
     return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
   }
 
-  /* ── auto-scroll ───────────────────────────────────────────── */
-  function toggleAutoScroll() {
-    autoScrollSpeed = (autoScrollSpeed + 1) % 4;
-    btnScroll.querySelector('.ctrl-label').textContent = SPEED_LABELS[autoScrollSpeed];
-    if (autoScrollSpeed === 0) { stopAutoScroll(); return; }
-    if (!scrollRAF) startAutoScroll();
-  }
-
-  function startAutoScroll() {
-    function step() {
-      if (autoScrollSpeed === 0) return;
-      body.scrollTop += SPEED_PX[autoScrollSpeed];
-      scrollRAF = requestAnimationFrame(step);
+  /* ── Chinese variant toggle (OpenCC-js) ────────────────────── */
+  function initConverters() {
+    if (typeof OpenCC !== 'undefined') {
+      converterToTraditional = OpenCC.Converter({ from: 'cn', to: 'tw' });
+      converterToSimplified = OpenCC.Converter({ from: 'tw', to: 'cn' });
     }
-    scrollRAF = requestAnimationFrame(step);
   }
 
-  function stopAutoScroll() {
-    if (scrollRAF) { cancelAnimationFrame(scrollRAF); scrollRAF = null; }
-    autoScrollSpeed = 0;
-    btnScroll.querySelector('.ctrl-label').textContent = 'Off';
+  initConverters();
+
+  function toggleChineseVariant() {
+    if (!converterToTraditional || !converterToSimplified) {
+      initConverters();
+      if (!converterToTraditional) return;
+    }
+
+    isTraditional = !isTraditional;
+    const converter = isTraditional ? converterToTraditional : converterToSimplified;
+
+    const lines = content.querySelectorAll('.lyrics-line');
+    lines.forEach(line => {
+      line.textContent = converter(line.textContent);
+    });
+
+    const labels = content.querySelectorAll('.lyrics-label');
+    labels.forEach(label => {
+      label.textContent = converter(label.textContent);
+    });
+
+    btnConvert.textContent = isTraditional ? '繁→简' : '简→繁';
   }
 
   /* ── text size ─────────────────────────────────────────────── */
@@ -111,15 +117,16 @@
 
   /* ── reset on open ─────────────────────────────────────────── */
   function resetControls() {
-    autoScrollSpeed = 0; scrollRAF = null; fontStep = 0; readerMode = false;
-    btnScroll.querySelector('.ctrl-label').textContent = 'Off';
+    fontStep = 0; readerMode = false;
+    isTraditional = false;
+    if (btnConvert) btnConvert.textContent = '简/繁';
     content.style.fontSize = '';
     overlay.classList.remove('reader-mode');
   }
 
   /* ── event wiring ──────────────────────────────────────────── */
   btnBack.addEventListener('click', closeLyrics);
-  btnScroll.addEventListener('click', toggleAutoScroll);
+  btnConvert.addEventListener('click', toggleChineseVariant);
   btnSizeUp.addEventListener('click', () => changeSize(1));
   btnSizeDown.addEventListener('click', () => changeSize(-1));
   btnReader.addEventListener('click', toggleReader);
