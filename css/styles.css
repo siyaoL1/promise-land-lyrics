@@ -343,7 +343,7 @@ button {
    ═══════════════════════════════════════════════════════════════ */
 
 :root {
-  --lyrics-base-size: clamp(1.15rem, 1rem + 1vw, 1.55rem);
+  --lyrics-base-size: clamp(1rem, 0.85rem + 1vw, 1.4rem);
 }
 
 .lyrics-overlay {
