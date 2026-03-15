@@ -301,12 +301,14 @@ button {
   bottom: 0;
   left: 0;
   right: 0;
-  height: clamp(4rem, 10vh, 8rem);
+  height: clamp(8rem, 20vh, 14rem);
   background: linear-gradient(
     to bottom,
     transparent 0%,
-    rgba(10, 10, 10, 0.7) 50%,
-    rgba(10, 10, 10, 0.95) 100%
+    rgba(10, 10, 10, 0.6) 30%,
+    rgba(10, 10, 10, 0.95) 60%,
+    rgba(10, 10, 10, 1) 80%,
+    rgba(10, 10, 10, 1) 100%
   );
   pointer-events: none;
   z-index: 5;
