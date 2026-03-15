@@ -7,7 +7,7 @@
   --text: #e8e8e8;
   --text-muted: rgba(232, 232, 232, 0.72);
   --shadow: rgba(0, 0, 0, 0.42);
-  --content-width: min(88vw, 42rem);
+  --content-width: clamp(20rem, 90vw, 40rem);
   --radius-lg: 1.75rem;
   --radius-md: 1.2rem;
   --timing-slow: 1.6s;
@@ -211,13 +211,12 @@ button {
   /* Shimmer: subtle gold sweep on transparent text */
   background: linear-gradient(
     90deg,
-    rgba(220, 220, 220, 0.65) 0%,
-    rgba(220, 220, 220, 0.65) 35%,
-    rgba(232, 210, 160, 1) 50%,
-    rgba(220, 220, 220, 0.65) 65%,
-    rgba(220, 220, 220, 0.65) 100%
+    rgba(212, 168, 67, 0.45) 0%,
+    rgba(255, 215, 0, 1) 15%,
+    rgba(212, 168, 67, 0.45) 30%,
+    rgba(212, 168, 67, 0.45) 100%
   );
-  background-size: 250% 100%;
+  background-size: 400% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -226,7 +225,7 @@ button {
 .is-ready .continue-text {
   opacity: 1;
   transform: translateY(0);
-  animation: textShimmer 3s ease-in-out infinite;
+  animation: textShimmer 3s linear infinite;
 }
 
 .is-ready .poster-stage {
@@ -240,7 +239,7 @@ button {
   justify-content: flex-start;
   opacity: 0;
   pointer-events: none;
-  padding: 0;
+  padding: 0 5vw;
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
   transition: opacity 0.6s ease, transform 0.6s ease;
@@ -251,9 +250,10 @@ button {
   flex: 1;
   width: 100%;
   max-width: var(--content-width);
+  margin: 0 auto;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  padding: 0.5rem 1.5rem 4rem;
+  padding: 0.5rem 0 4rem;
   scrollbar-width: none;
 }
 
@@ -299,7 +299,7 @@ button {
 
 @keyframes textShimmer {
   0% { background-position: 100% 0; }
-  100% { background-position: -100% 0; }
+  100% { background-position: 0% 0; }
 }
 
 @keyframes posterFadeIn {
@@ -409,12 +409,13 @@ button {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   scroll-behavior: auto;          /* RAF handles smooth scroll */
+  padding-top: 0.5rem;
 }
 
 .lyrics-content {
   max-width: var(--content-width);
   margin: 0 auto;
-  padding: 2rem 1.25rem 30vh;
+  padding: 3rem 1.25rem 35vh;
   font-family: var(--font-display);
   font-size: var(--lyrics-base-size);
   line-height: 1.8;
@@ -424,7 +425,30 @@ button {
 
 /* ── sections ────────────────────────────────────────────────── */
 .lyrics-section {
+  position: relative;
   margin-bottom: 2.4rem;
+  padding-bottom: 2rem;
+}
+
+.lyrics-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.12) 30%,
+    rgba(255, 255, 255, 0.12) 70%,
+    transparent 100%
+  );
+}
+
+.lyrics-section:last-child::after {
+  display: none;
 }
 
 .lyrics-label {
@@ -536,7 +560,8 @@ button {
   flex-shrink: 0;
   width: 100%;
   max-width: var(--content-width);
-  padding: 2.5rem 1.5rem 0.75rem;
+  margin: 0 auto;
+  padding: 2.5rem 0 0.75rem;
   position: relative;
   z-index: 10;
   background: linear-gradient(
@@ -582,6 +607,7 @@ button {
 /* Song list */
 .song-list {
   flex: 1;
+  width: 100%;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -589,6 +615,7 @@ button {
 
 /* Section headers */
 .set-section-header {
+  width: 100%;
   display: flex;
   align-items: center;
   gap: 1rem;
