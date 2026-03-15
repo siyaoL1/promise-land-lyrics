@@ -159,5 +159,10 @@
   btnSizeUp.addEventListener('click', () => changeSize(1));
   btnSizeDown.addEventListener('click', () => changeSize(-1));
 
+  // Swipe right to go back to song list
+  if (window.addSwipeBack) {
+    window.addSwipeBack(overlay, closeLyrics);
+  }
+
 })();
 

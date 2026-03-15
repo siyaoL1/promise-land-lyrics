@@ -1,3 +1,27 @@
+/* ── Swipe-back gesture helper ────────────────── */
+window.addSwipeBack = function(element, callback) {
+  let touchStartX = 0;
+  let touchStartY = 0;
+  let touchStartTime = 0;
+
+  element.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    touchStartY = e.changedTouches[0].screenY;
+    touchStartTime = Date.now();
+  }, { passive: true });
+
+  element.addEventListener('touchend', (e) => {
+    const deltaX = e.changedTouches[0].screenX - touchStartX;
+    const deltaY = Math.abs(e.changedTouches[0].screenY - touchStartY);
+    const deltaTime = Date.now() - touchStartTime;
+
+    // Right swipe: positive deltaX, min 80px, max 50px vertical, under 300ms
+    if (deltaX > 80 && deltaY < 50 && deltaTime < 300) {
+      callback();
+    }
+  }, { passive: true });
+};
+
 const appShell = document.querySelector('.app-shell');
 const posterStage = document.querySelector('.poster-stage');
 
@@ -76,6 +100,14 @@ if (appShell && posterStage) {
           }
         }, 100);
       }, 600); // Match the fade-out duration
+    });
+  }
+
+  // Swipe right to go back to landing page
+  const contentOverlay = document.querySelector('.content-overlay');
+  if (contentOverlay) {
+    window.addSwipeBack(contentOverlay, () => {
+      if (searchBack) searchBack.click();
     });
   }
 }
