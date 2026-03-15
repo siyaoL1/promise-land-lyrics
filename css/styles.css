@@ -266,7 +266,7 @@ button {
   margin: 0 auto;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  padding: 0.5rem 0 8rem;
+  padding: 0.5rem 0 15rem;
   scrollbar-width: none;
 }
 
