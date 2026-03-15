@@ -6,7 +6,7 @@
   let songsData = null;
   let currentSong = null;
   let fontStep = 0;                 // –3 … +5
-  let isTraditional = false;
+  let isTraditional = sessionStorage.getItem('charMode') === 'traditional';
   let converterToTraditional = null;
   let converterToSimplified = null;
 
@@ -85,6 +85,7 @@
     }
 
     isTraditional = !isTraditional;
+    sessionStorage.setItem('charMode', isTraditional ? 'traditional' : 'simplified');
     const converter = isTraditional ? converterToTraditional : converterToSimplified;
 
     const lines = content.querySelectorAll('.lyrics-line');
@@ -101,17 +102,40 @@
   }
 
   /* ── text size ─────────────────────────────────────────────── */
+  function applyFontStep() {
+    if (fontStep === 0) {
+      content.style.fontSize = '';
+    } else {
+      content.style.fontSize = 'calc(var(--lyrics-base-size) + ' + (fontStep * 0.15) + 'rem)';
+    }
+  }
+
   function changeSize(delta) {
     fontStep = Math.max(-3, Math.min(5, fontStep + delta));
-    content.style.fontSize = 'calc(var(--lyrics-base-size) + ' + (fontStep * 0.15) + 'rem)';
+    applyFontStep();
+    sessionStorage.setItem('fontSizeStep', String(fontStep));
   }
 
   /* ── reset on open ─────────────────────────────────────────── */
   function resetControls() {
-    fontStep = 0;
-    isTraditional = false;
-    if (btnConvert) btnConvert.textContent = '简/繁';
-    content.style.fontSize = '';
+    /* Restore saved font-size preference */
+    var savedStep = sessionStorage.getItem('fontSizeStep');
+    fontStep = savedStep !== null ? Math.max(-3, Math.min(5, parseInt(savedStep, 10) || 0)) : 0;
+    applyFontStep();
+
+    /* Restore saved character preference */
+    isTraditional = sessionStorage.getItem('charMode') === 'traditional';
+    if (isTraditional && converterToTraditional) {
+      const lines = content.querySelectorAll('.lyrics-line');
+      lines.forEach(line => {
+        line.textContent = converterToTraditional(line.textContent);
+      });
+      const labels = content.querySelectorAll('.lyrics-label');
+      labels.forEach(label => {
+        label.textContent = converterToTraditional(label.textContent);
+      });
+    }
+    if (btnConvert) btnConvert.textContent = isTraditional ? '繁→简' : '简→繁';
   }
 
   /* ── custom scrollbar for lyrics body ─────────────────────── */
