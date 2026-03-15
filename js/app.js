@@ -5,7 +5,7 @@ if (appShell && posterStage) {
   window.addEventListener('load', () => {
     window.setTimeout(() => {
       appShell.classList.add('is-ready');
-    }, 1200);
+    }, 600);
   });
 
   posterStage.addEventListener('click', () => {
@@ -17,7 +17,8 @@ if (appShell && posterStage) {
 
   const searchBack = document.querySelector('.search-back');
   if (searchBack) {
-    searchBack.addEventListener('click', () => {
+    searchBack.addEventListener('click', (e) => {
+      e.stopPropagation();
       appShell.classList.remove('is-entered');
       appShell.dataset.state = 'poster';
     });
