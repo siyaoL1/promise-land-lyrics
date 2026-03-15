@@ -26,6 +26,12 @@ if (appShell && posterStage) {
       contentOverlay.style.opacity = '0';
       contentOverlay.style.pointerEvents = 'none';
 
+      // Also fade out corner art simultaneously
+      document.querySelectorAll('.corner-art').forEach(art => {
+        art.style.transition = 'opacity 0.6s ease';
+        art.style.opacity = '0';
+      });
+
       // Step 2: After fade-out completes, reset to landing page
       setTimeout(() => {
         appShell.classList.remove('is-entered');
@@ -35,6 +41,12 @@ if (appShell && posterStage) {
         contentOverlay.style.transition = '';
         contentOverlay.style.opacity = '';
         contentOverlay.style.pointerEvents = '';
+
+        // Reset corner art inline styles so CSS classes control them again
+        document.querySelectorAll('.corner-art').forEach(art => {
+          art.style.transition = '';
+          art.style.opacity = '';
+        });
 
         // Re-trigger the continue text fade-in
         const posterStage = document.querySelector('.poster-stage');
