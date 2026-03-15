@@ -1,0 +1,30 @@
+{
+  "id": "setlist-1",
+  "title": "The Promise Land",
+  "date": "2025",
+  "sections": [
+    {
+      "name": "上半场 First Half",
+      "songIds": [
+        "i-know-i-know",
+        "run-the-race",
+        "revival",
+        "if-you-only-had-15-minutes",
+        "save-my-people-from-the-fire",
+        "last-prayer"
+      ]
+    },
+    {
+      "name": "下半场 Second Half",
+      "songIds": [
+        "one-plus",
+        "john-6-39",
+        "turns",
+        "win-or-lose",
+        "abba-abba",
+        "tell-me-god",
+        "all-belongs-to-my-lord"
+      ]
+    }
+  ]
+}
