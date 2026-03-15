@@ -121,7 +121,7 @@ if (typeof OverlayScrollbarsGlobal !== 'undefined') {
   const { OverlayScrollbars } = OverlayScrollbarsGlobal;
 
   // Main song list scroll area
-  const contentOverlay = document.querySelector('.content-overlay');
+  const contentOverlay = document.querySelector('.content-shell');
   if (contentOverlay) {
     OverlayScrollbars(contentOverlay, {
       scrollbars: {

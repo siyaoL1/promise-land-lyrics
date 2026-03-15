@@ -39,11 +39,11 @@ button {
 /* ── Custom ornamental scrollbar ───────────────────────────── */
 
 /* Hide native scrollbar since OverlayScrollbars handles it */
-.content-overlay,
+.content-shell,
 .lyrics-body {
   scrollbar-width: none;
 }
-.content-overlay::-webkit-scrollbar,
+.content-shell::-webkit-scrollbar,
 .lyrics-body::-webkit-scrollbar {
   display: none;
 }
@@ -203,7 +203,7 @@ button {
   font-family: var(--font-display);
   font-size: clamp(0.75rem, 0.7rem + 0.3vw, 0.9rem);
   font-weight: 400;
-  letter-spacing: 0.35em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   cursor: pointer;
   transition: opacity 0.6s ease, transform 0.6s ease;
@@ -211,11 +211,11 @@ button {
   /* Shimmer: subtle gold sweep on transparent text */
   background: linear-gradient(
     90deg,
-    rgba(200, 200, 200, 0.35) 0%,
-    rgba(200, 200, 200, 0.35) 35%,
+    rgba(220, 220, 220, 0.65) 0%,
+    rgba(220, 220, 220, 0.65) 35%,
     rgba(232, 210, 160, 1) 50%,
-    rgba(200, 200, 200, 0.35) 65%,
-    rgba(200, 200, 200, 0.35) 100%
+    rgba(220, 220, 220, 0.65) 65%,
+    rgba(220, 220, 220, 0.65) 100%
   );
   background-size: 250% 100%;
   -webkit-background-clip: text;
@@ -240,15 +240,25 @@ button {
   justify-content: flex-start;
   opacity: 0;
   pointer-events: none;
-  padding: 3rem 1.5rem 2rem;
-  overflow-y: auto;
+  padding: 0;
+  overflow: hidden;
   -webkit-overflow-scrolling: touch;
   transition: opacity 0.6s ease, transform 0.6s ease;
   transform: translateY(1rem);
 }
 
 .content-shell {
-  min-height: 62vh;
+  flex: 1;
+  width: 100%;
+  max-width: var(--content-width);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.5rem 1.5rem 4rem;
+  scrollbar-width: none;
+}
+
+.content-shell::-webkit-scrollbar {
+  display: none;
 }
 
 .is-entered .poster-image {
@@ -519,22 +529,20 @@ button {
 .content-shell {
   display: flex;
   flex-direction: column;
-  padding: 2rem 1.5rem 4rem;
 }
 
 /* Search */
 .search-bar {
   flex-shrink: 0;
-  margin-bottom: 0.5rem;
-  position: sticky;
-  top: 0;
+  width: 100%;
+  max-width: var(--content-width);
+  padding: 2.5rem 1.5rem 0.75rem;
+  position: relative;
   z-index: 10;
-  padding-top: 1rem;
-  padding-bottom: 0.75rem;
   background: linear-gradient(
     180deg,
-    rgba(10, 10, 10, 0.9) 0%,
-    rgba(10, 10, 10, 0.7) 85%,
+    rgba(10, 10, 10, 0.95) 0%,
+    rgba(10, 10, 10, 0.85) 80%,
     transparent 100%
   );
   backdrop-filter: blur(0.5rem);
