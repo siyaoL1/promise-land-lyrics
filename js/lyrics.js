@@ -77,7 +77,7 @@
   /* ── auto-scroll ───────────────────────────────────────────── */
   function toggleAutoScroll() {
     autoScrollSpeed = (autoScrollSpeed + 1) % 4;
-    btnScroll.textContent = '⏬ ' + SPEED_LABELS[autoScrollSpeed];
+    btnScroll.querySelector('.ctrl-label').textContent = SPEED_LABELS[autoScrollSpeed];
     if (autoScrollSpeed === 0) { stopAutoScroll(); return; }
     if (!scrollRAF) startAutoScroll();
   }
@@ -94,7 +94,7 @@
   function stopAutoScroll() {
     if (scrollRAF) { cancelAnimationFrame(scrollRAF); scrollRAF = null; }
     autoScrollSpeed = 0;
-    btnScroll.textContent = '⏬ Off';
+    btnScroll.querySelector('.ctrl-label').textContent = 'Off';
   }
 
   /* ── text size ─────────────────────────────────────────────── */
@@ -112,7 +112,7 @@
   /* ── reset on open ─────────────────────────────────────────── */
   function resetControls() {
     autoScrollSpeed = 0; scrollRAF = null; fontStep = 0; readerMode = false;
-    btnScroll.textContent = '⏬ Off';
+    btnScroll.querySelector('.ctrl-label').textContent = 'Off';
     content.style.fontSize = '';
     overlay.classList.remove('reader-mode');
   }

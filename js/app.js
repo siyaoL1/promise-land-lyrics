@@ -47,13 +47,14 @@ function createSongCard(song, index) {
   card.type = 'button';
   card.setAttribute('role', 'listitem');
   card.dataset.songId = song.id;
+  card.style.animationDelay = (index * 0.05) + 's';
   card.innerHTML =
     '<span class="song-card__number">' + (index + 1) + '</span>' +
     '<span class="song-card__info">' +
       '<span class="song-card__title">' + escapeHtml(song.title) + '</span>' +
       '<span class="song-card__artist">' + escapeHtml(song.artist) + '</span>' +
     '</span>' +
-    '<span class="song-card__arrow" aria-hidden="true">›</span>';
+    '<span class="song-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="9 18 15 12 9 6"/></svg></span>';
 
   card.addEventListener('click', () => {
     window.dispatchEvent(new CustomEvent('open-song', { detail: { songId: song.id } }));
