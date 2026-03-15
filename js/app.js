@@ -34,85 +34,60 @@ async function initBrowseUI() {
   songsData = songs;
   setlistData = setlist;
 
-  renderSongList(songsData);
-  renderSetList(setlistData, songsData);
-  bindTabs();
+  renderUnifiedList(setlistData, songsData);
   bindSearch();
 }
 
 /* ── Rendering ─────────────────────────────────── */
 
-function createSongCard(song, index) {
-  const card = document.createElement('button');
-  card.className = 'song-card';
-  card.type = 'button';
-  card.setAttribute('role', 'listitem');
-  card.dataset.songId = song.id;
-  card.style.animationDelay = (index * 0.05) + 's';
-  card.innerHTML =
-    '<span class="song-card__number">' + (index + 1) + '</span>' +
-    '<span class="song-card__info">' +
-      '<span class="song-card__title">' + escapeHtml(song.title) + '</span>' +
-      '<span class="song-card__artist">' + escapeHtml(song.artist) + '</span>' +
-    '</span>' +
-    '<span class="song-card__arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><polyline points="9 18 15 12 9 6"/></svg></span>';
+function createSongRow(song) {
+  const row = document.createElement('button');
+  row.className = 'song-row';
+  row.type = 'button';
+  row.setAttribute('role', 'listitem');
+  row.dataset.songId = song.id;
+  row.innerHTML =
+    '<span class="song-row__title">' + escapeHtml(song.title) + '</span>' +
+    '<span class="song-row__artist">' + escapeHtml(song.artist) + '</span>';
 
-  card.addEventListener('click', () => {
+  row.addEventListener('click', () => {
     window.dispatchEvent(new CustomEvent('open-song', { detail: { songId: song.id } }));
   });
-  return card;
+  return row;
 }
 
-function renderSongList(songs) {
-  const container = document.getElementById('view-songs');
-  container.innerHTML = '';
-  if (songs.length === 0) {
-    container.innerHTML = '<p class="empty-state">No songs found.</p>';
-    return;
-  }
-  songs.forEach((song, i) => container.appendChild(createSongCard(song, i)));
-}
-
-function renderSetList(setlist, allSongs) {
-  const container = document.getElementById('view-setlist');
+function renderUnifiedList(setlist, allSongs, filterQuery) {
+  const container = document.getElementById('song-list');
   container.innerHTML = '';
   const songMap = Object.fromEntries(allSongs.map(s => [s.id, s]));
-  let globalIndex = 0;
+
+  if (filterQuery) {
+    const query = filterQuery.toLowerCase();
+    const filtered = allSongs.filter(song => {
+      if (song.title.toLowerCase().includes(query)) return true;
+      return song.lyrics.some(section =>
+        section.lines.some(line => line.toLowerCase().includes(query))
+      );
+    });
+    if (filtered.length === 0) {
+      container.innerHTML = '<p class="empty-state">No songs found.</p>';
+      return;
+    }
+    filtered.forEach(song => container.appendChild(createSongRow(song)));
+    return;
+  }
 
   setlist.sections.forEach(section => {
-    const group = document.createElement('div');
-    group.className = 'setlist-section';
-    group.innerHTML = '<h3 class="setlist-section__heading">' + escapeHtml(section.name) + '</h3>';
-
-    const list = document.createElement('div');
-    list.setAttribute('role', 'list');
+    const header = document.createElement('h3');
+    header.className = 'set-section-header';
+    header.textContent = section.name;
+    container.appendChild(header);
 
     section.songIds.forEach(id => {
       const song = songMap[id];
       if (song) {
-        list.appendChild(createSongCard(song, globalIndex));
-        globalIndex++;
+        container.appendChild(createSongRow(song));
       }
-    });
-
-    group.appendChild(list);
-    container.appendChild(group);
-  });
-}
-
-/* ── Tabs ──────────────────────────────────────── */
-
-function bindTabs() {
-  const tabs = document.querySelectorAll('.view-tab');
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('is-active'));
-      tab.classList.add('is-active');
-
-      const target = tab.dataset.view;
-      document.querySelectorAll('.view-panel').forEach(panel => {
-        panel.hidden = panel.id !== 'view-' + target;
-      });
     });
   });
 }
@@ -122,24 +97,12 @@ function bindTabs() {
 function bindSearch() {
   const input = document.querySelector('.search-input');
   input.addEventListener('input', () => {
-    const query = input.value.trim().toLowerCase();
+    const query = input.value.trim();
     if (!query) {
-      renderSongList(songsData);
+      renderUnifiedList(setlistData, songsData);
       return;
     }
-    const filtered = songsData.filter(song => {
-      if (song.title.toLowerCase().includes(query)) return true;
-      return song.lyrics.some(section =>
-        section.lines.some(line => line.toLowerCase().includes(query))
-      );
-    });
-    renderSongList(filtered);
-
-    // Switch to All Songs view when searching
-    const songsTab = document.querySelector('[data-view="songs"]');
-    if (songsTab && !songsTab.classList.contains('is-active')) {
-      songsTab.click();
-    }
+    renderUnifiedList(setlistData, songsData, query);
   });
 }
 
