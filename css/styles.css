@@ -618,12 +618,11 @@ button {
   width: 100%;
   max-width: var(--content-width);
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 0.5rem;
-  padding: 2.5rem 1.5rem 0.75rem;
   position: relative;
+  padding: 2.5rem 1.5rem 0.75rem;
   z-index: 10;
   background: linear-gradient(
     180deg,
@@ -636,8 +635,8 @@ button {
 }
 
 .search-back {
-  grid-column: 1;
-  justify-self: start;
+  position: absolute;
+  left: clamp(0.5rem, 2vw, 1.5rem);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -650,7 +649,6 @@ button {
   cursor: pointer;
   transition: color 0.2s ease;
   -webkit-tap-highlight-color: transparent;
-  margin-left: clamp(0.5rem, 2vw, 1.5rem);
 }
 
 .search-back:hover,
@@ -660,7 +658,7 @@ button {
 }
 
 .search-input {
-  grid-column: 2;
+  max-width: 80%;
   width: 100%;
   padding: 0.6rem 0.5rem;
   border: none;
