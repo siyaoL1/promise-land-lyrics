@@ -67,7 +67,7 @@ if (appShell && posterStage) {
           requestAnimationFrame(() => {
             if (continueText) {
               // Now add the transition and let is-ready trigger the fade-in
-              continueText.style.transition = 'opacity 1s ease';
+              continueText.style.transition = 'opacity 0.5s ease';
             }
             if (posterStage) {
               posterStage.classList.add('is-ready');
@@ -79,7 +79,7 @@ if (appShell && posterStage) {
                 continueText.style.transition = '';
                 continueText.style.opacity = '';
               }
-            }, 1200);
+            }, 700);
           });
         });
       }, 600); // Match the fade-out duration
