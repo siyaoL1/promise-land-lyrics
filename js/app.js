@@ -49,39 +49,32 @@ if (appShell && posterStage) {
         });
 
         // Re-trigger the continue text fade-in
-        const posterStage = document.querySelector('.poster-stage');
         const continueText = document.querySelector('.continue-text');
 
         if (posterStage) {
+          // Remove is-ready so text goes to opacity: 0
           posterStage.classList.remove('is-ready');
         }
 
         if (continueText) {
-          // Ensure text is invisible and has no transition yet
+          // Force opacity to 0 instantly (no transition for the reset)
           continueText.style.transition = 'none';
           continueText.style.opacity = '0';
+
+          // Force browser to apply the instant reset
+          void continueText.offsetHeight;
+
+          // Remove inline styles — CSS transition takes over
+          continueText.style.transition = '';
+          continueText.style.opacity = '';
         }
 
-        // Wait for the browser to paint the invisible state
-        requestAnimationFrame(() => {
-          requestAnimationFrame(() => {
-            if (continueText) {
-              // Now add the transition and let is-ready trigger the fade-in
-              continueText.style.transition = 'opacity 0.5s ease';
-            }
-            if (posterStage) {
-              posterStage.classList.add('is-ready');
-            }
-
-            // Clean up inline styles after the fade-in completes
-            setTimeout(() => {
-              if (continueText) {
-                continueText.style.transition = '';
-                continueText.style.opacity = '';
-              }
-            }, 700);
-          });
-        });
+        // Re-add is-ready after a short delay — CSS transition handles the fade-in
+        setTimeout(() => {
+          if (posterStage) {
+            posterStage.classList.add('is-ready');
+          }
+        }, 100);
       }, 600); // Match the fade-out duration
     });
   }

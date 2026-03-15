@@ -213,7 +213,7 @@ button {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: none;
+  transition: opacity 1.2s ease;
 
   /* Shimmer effect */
   color: #FFFFFF;
