@@ -301,8 +301,10 @@
     });
   }
 
-  /* ── Progress bar seeking ──────────────────────────────────── */
+  /* ── Progress bar seeking + drag/swipe ─────────────────────── */
   if (progressWrap) {
+    var isDragging = false;
+
     function seekToPosition(clientX) {
       if (!audio || !audio.duration) return;
       var rect = progressWrap.getBoundingClientRect();
@@ -310,15 +312,68 @@
       audio.currentTime = pct * audio.duration;
     }
 
+    function updateFillFromClientX(clientX) {
+      if (!audio || !audio.duration) return;
+      var rect = progressWrap.getBoundingClientRect();
+      var pct = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
+      if (progressFill) progressFill.style.width = (pct * 100) + '%';
+      audio.currentTime = pct * audio.duration;
+    }
+
+    function startDrag() {
+      isDragging = true;
+      progressWrap.classList.add('dragging');
+    }
+
+    function stopDrag() {
+      if (!isDragging) return;
+      isDragging = false;
+      progressWrap.classList.remove('dragging');
+    }
+
+    /* — Click (unchanged) — */
     progressWrap.addEventListener('click', function (e) {
       seekToPosition(e.clientX);
     });
 
+    /* — Mouse drag — */
+    progressWrap.addEventListener('mousedown', function (e) {
+      e.preventDefault();
+      startDrag();
+      updateFillFromClientX(e.clientX);
+    });
+
+    document.addEventListener('mousemove', function (e) {
+      if (!isDragging) return;
+      e.preventDefault();
+      updateFillFromClientX(e.clientX);
+    });
+
+    document.addEventListener('mouseup', function () {
+      stopDrag();
+    });
+
+    /* — Touch drag — */
     progressWrap.addEventListener('touchstart', function (e) {
       if (e.touches.length > 0) {
-        e.preventDefault(); // prevent ghost click
-        seekToPosition(e.touches[0].clientX);
+        e.preventDefault();
+        startDrag();
+        updateFillFromClientX(e.touches[0].clientX);
       }
+    }, { passive: false });
+
+    progressWrap.addEventListener('touchmove', function (e) {
+      if (!isDragging || e.touches.length === 0) return;
+      e.preventDefault();
+      updateFillFromClientX(e.touches[0].clientX);
+    }, { passive: false });
+
+    document.addEventListener('touchend', function () {
+      stopDrag();
+    });
+
+    document.addEventListener('touchcancel', function () {
+      stopDrag();
     });
   }
 
