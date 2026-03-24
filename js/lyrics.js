@@ -85,6 +85,9 @@
     renderLyrics(currentSong);
     overlay.classList.add('is-visible');
     overlay.setAttribute('aria-hidden', 'false');
+    userScrolling = false;
+    if (scrollTimeout) clearTimeout(scrollTimeout);
+    lastHighlightIndex = -1;
     scrollBody(0);
     resetControls();
 
@@ -418,6 +421,10 @@
       scrollTimeout = setTimeout(function () { userScrolling = false; }, 2000);
     }, { passive: true });
 
+    target.addEventListener('touchcancel', function () {
+      scrollTimeout = setTimeout(function () { userScrolling = false; }, 2000);
+    }, { passive: true });
+
     target.addEventListener('mousedown', function () {
       userScrolling = true;
       if (scrollTimeout) clearTimeout(scrollTimeout);
@@ -426,6 +433,12 @@
 
     target.addEventListener('mouseup', function () {
       scrollTimeout = setTimeout(function () { userScrolling = false; }, 2000);
+    }, { passive: true });
+
+    target.addEventListener('mouseleave', function () {
+      if (userScrolling) {
+        scrollTimeout = setTimeout(function () { userScrolling = false; }, 2000);
+      }
     }, { passive: true });
 
     target.addEventListener('wheel', function () {
