@@ -838,71 +838,37 @@
       }
     ],
     "previewAudio": "assets/audio/last-prayer-preview.mp3",
-    "previewSection": "Bridge",
+    "previewSection": ["Verse 2", "Bridge"],
     "previewTimestamps": [
       {
-        "line": 0,
-        "time": 9.12
-      },
-      {
-        "line": 1,
-        "time": 12.2
-      },
-      {
-        "line": 2,
-        "time": 17.04
-      },
-      {
-        "line": 3,
-        "time": 20.74
-      },
-      {
-        "line": 4,
-        "time": 23.96
-      },
-      {
-        "line": 5,
-        "time": 25.5
-      },
-      {
-        "line": 6,
-        "time": 27.34
-      },
-      {
-        "line": 7,
-        "time": 28.5
-      },
-      {
-        "line": 8,
-        "time": 29.5
-      },
-      {
-        "line": 9,
-        "time": 30.46
-      },
-      {
-        "line": 10,
-        "time": 31.5
-      },
-      {
-        "line": 11,
-        "time": 32.5
-      },
-      {
-        "line": 12,
-        "time": 33.2
-      },
-      {
+        "section": "Verse 2",
         "line": 13,
-        "time": 33.8
+        "time": 0.00
       },
       {
+        "section": "Verse 2",
         "line": 14,
-        "time": 34.62
+        "time": 3.10
       },
       {
-        "line": 15,
-        "time": 36.0
+        "section": "Bridge",
+        "line": 0,
+        "time": 9.00
+      },
+      {
+        "section": "Bridge",
+        "line": 1,
+        "time": 16.36
+      },
+      {
+        "section": "Bridge",
+        "line": 2,
+        "time": 23.90
+      },
+      {
+        "section": "Bridge",
+        "line": 3,
+        "time": 31.02
       }
     ]
   },
