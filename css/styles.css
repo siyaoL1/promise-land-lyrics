@@ -415,7 +415,7 @@ button {
 
 .lyrics-back {
   justify-self: start;
-  margin-left: clamp(2.2rem, 5vw, 4rem);
+  margin-left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -825,6 +825,8 @@ button {
 /* Progress bar */
 .audio-progress-wrap {
   padding: 0.75rem 0;
+  max-width: 70%;
+  margin: 0 auto;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
@@ -937,6 +939,7 @@ button {
   font-size: 0.7rem;
   color: var(--text-muted);
   letter-spacing: 0.04em;
+  transition: color 0.3s ease;
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -944,7 +947,7 @@ button {
    ═══════════════════════════════════════════════════════════════ */
 
 .lyrics-line {
-  transition: opacity 0.4s ease, transform 0.3s ease, color 0.4s ease;
+  transition: opacity 0.4s ease, transform 0.3s ease, color 0.4s ease, text-shadow 0.4s ease;
   position: relative;
 }
 
