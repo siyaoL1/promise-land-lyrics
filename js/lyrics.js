@@ -194,6 +194,7 @@
     // Audio ended — just stop, no reset
     audio.addEventListener('ended', function () {
       isPlaying = false;
+      overlay.classList.remove('is-playing');
       showPlayIcon();
       // Leave lyrics frozen at current position
     });
@@ -219,6 +220,7 @@
     if (!audio) return;
     audio.play().then(function () {
       isPlaying = true;
+      overlay.classList.add('is-playing');
       showPauseIcon();
     }).catch(function (err) {
       console.warn('Playback blocked:', err);
@@ -229,6 +231,7 @@
     if (!audio) return;
     audio.pause();
     isPlaying = false;
+    overlay.classList.remove('is-playing');
     showPlayIcon();
   }
 
@@ -245,6 +248,7 @@
     }
     isPlaying = false;
     userScrolling = false;
+    overlay.classList.remove('is-playing');
     if (scrollTimeout) clearTimeout(scrollTimeout);
     showPlayIcon();
     resetPlayerUI();
@@ -253,6 +257,7 @@
   function hidePlayer() {
     if (playerBar) playerBar.setAttribute('hidden', '');
     overlay.classList.remove('is-syncing');
+    overlay.classList.remove('is-playing');
   }
 
   function resetPlayerUI() {

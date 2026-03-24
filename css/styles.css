@@ -944,11 +944,11 @@ button {
   position: relative;
 }
 
-.lyrics-overlay.is-syncing .lyrics-line {
+.lyrics-overlay.is-playing .lyrics-line {
   opacity: 0.45;
 }
 
-.lyrics-overlay.is-syncing .lyrics-line.current {
+.lyrics-overlay.is-playing .lyrics-line.current {
   opacity: 1;
   color: var(--accent);
   transform: scale(1.02);
