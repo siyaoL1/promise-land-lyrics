@@ -360,48 +360,13 @@
   }
 
   function scrollToElement(el) {
-    var container = getScrollContainer();
-    if (!container) return;
-
     // Cancel any ongoing scroll animation
     if (scrollAnimationId) {
       cancelAnimationFrame(scrollAnimationId);
       scrollAnimationId = null;
     }
 
-    var containerRect = container.getBoundingClientRect();
-    var elRect = el.getBoundingClientRect();
-    // Target: center the element in the container
-    var targetOffset = elRect.top - containerRect.top - (containerRect.height / 2) + (elRect.height / 2);
-
-    // If already very close, skip
-    if (Math.abs(targetOffset) < 5) return;
-
-    var startScrollTop = container.scrollTop;
-    var targetScrollTop = startScrollTop + targetOffset;
-    var startTime = null;
-    var duration = 600; // ms — smooth glide duration
-
-    function easeInOutCubic(t) {
-      return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
-    }
-
-    function animate(currentTime) {
-      if (!startTime) startTime = currentTime;
-      var elapsed = currentTime - startTime;
-      var progress = Math.min(elapsed / duration, 1);
-      var easedProgress = easeInOutCubic(progress);
-
-      container.scrollTop = startScrollTop + (targetScrollTop - startScrollTop) * easedProgress;
-
-      if (progress < 1) {
-        scrollAnimationId = requestAnimationFrame(animate);
-      } else {
-        scrollAnimationId = null;
-      }
-    }
-
-    scrollAnimationId = requestAnimationFrame(animate);
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 
   function scrollBody(top) {
