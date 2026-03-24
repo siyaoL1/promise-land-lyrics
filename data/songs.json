@@ -706,7 +706,7 @@
       }
     ],
     "previewAudio": "assets/audio/save-my-people-from-the-fire-preview.mp3",
-    "previewSection": "Chorus 3",
+    "previewSection": "Chorus",
     "previewTimestamps": [
       {
         "line": 0,
@@ -986,47 +986,47 @@
       }
     ],
     "previewAudio": "assets/audio/one-plus-preview.mp3",
-    "previewSection": "Chorus",
+    "previewSection": "Chorus 2",
     "previewTimestamps": [
       {
         "line": 0,
-        "time": 0.0
+        "time": 0.00
       },
       {
         "line": 1,
-        "time": 2.84
+        "time": 2.62
       },
       {
         "line": 2,
-        "time": 6.0
+        "time": 5.36
       },
       {
         "line": 3,
-        "time": 8.2
+        "time": 7.98
       },
       {
         "line": 4,
-        "time": 9.7
+        "time": 9.94
       },
       {
         "line": 5,
-        "time": 11.18
+        "time": 11.06
       },
       {
         "line": 6,
-        "time": 14.04
+        "time": 13.78
       },
       {
         "line": 7,
-        "time": 16.82
+        "time": 17.27
       },
       {
         "line": 8,
-        "time": 19.62
+        "time": 19.36
       },
       {
         "line": 9,
-        "time": 21.1
+        "time": 21.06
       }
     ]
   },
@@ -1273,19 +1273,19 @@
     "previewTimestamps": [
       {
         "line": 0,
-        "time": 0.0
+        "time": 0.00
       },
       {
         "line": 1,
-        "time": 3.5
+        "time": 4.68
       },
       {
         "line": 2,
-        "time": 7.0
+        "time": 8.02
       },
       {
         "line": 3,
-        "time": 10.5
+        "time": 11.70
       }
     ]
   },
@@ -1538,35 +1538,35 @@
     "previewTimestamps": [
       {
         "line": 0,
-        "time": 2.44
+        "time": 0.00
       },
       {
         "line": 1,
-        "time": 7.28
+        "time": 4.02
       },
       {
         "line": 2,
-        "time": 13.98
+        "time": 11.94
       },
       {
         "line": 3,
-        "time": 19.02
+        "time": 16.52
       },
       {
         "line": 4,
-        "time": 24.92
+        "time": 23.34
       },
       {
         "line": 5,
-        "time": 30.26
+        "time": 27.76
       },
       {
         "line": 6,
-        "time": 36.6
+        "time": 35.06
       },
       {
         "line": 7,
-        "time": 43.14
+        "time": 39.64
       }
     ]
   }
