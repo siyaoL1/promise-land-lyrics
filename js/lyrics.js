@@ -64,14 +64,7 @@
     previewInput.checked = isPreviewOn();
     previewInput.addEventListener('change', function () {
       setPreviewMode(previewInput.checked);
-      if (!previewInput.checked) {
-        // Turning preview OFF — stop audio, remove syncing
-        stopAudio();
-        overlay.classList.remove('is-syncing');
-      } else if (currentSong && currentSong.previewAudio) {
-        // Turning preview ON — start audio
-        initAudio(currentSong);
-      }
+      // Just save the preference. Don't start/stop audio.
     });
   }
 
@@ -91,9 +84,9 @@
     scrollBody(0);
     resetControls();
 
-    // Audio preview
-    if (currentSong.previewAudio && isPreviewOn()) {
-      initAudio(currentSong);
+    // Audio preview — always init player for songs with preview audio
+    if (currentSong.previewAudio) {
+      initAudio(currentSong, isPreviewOn()); // pass whether to auto-play
     } else {
       hidePlayer();
     }
@@ -170,14 +163,14 @@
   }
 
   /* ── Audio engine ──────────────────────────────────────────── */
-  function initAudio(song) {
+  function initAudio(song, autoPlay) {
     stopAudio();
     if (!song.previewAudio) return;
 
     audio = new Audio(song.previewAudio);
     audio.preload = 'auto';
 
-    // Show player bar
+    // Show player bar (ALWAYS, regardless of autoPlay)
     if (playerBar) playerBar.removeAttribute('hidden');
 
     // Duration
@@ -199,7 +192,6 @@
       isPlaying = false;
       overlay.classList.remove('is-playing');
       showPlayIcon();
-      // Leave lyrics frozen at current position
     });
 
     audio.addEventListener('error', function () {
@@ -207,16 +199,19 @@
       hidePlayer();
     });
 
-    // Auto-scroll to preview section and start playback
+    // Only auto-scroll and auto-play if autoPlay is true
     overlay.classList.add('is-syncing');
-    if (previewSectionEl) {
-      setTimeout(function () {
-        scrollToElement(previewSectionEl);
-        setTimeout(function () { playAudio(); }, 400);
-      }, 300);
-    } else {
-      playAudio();
+    if (autoPlay) {
+      if (previewSectionEl) {
+        setTimeout(function () {
+          scrollToElement(previewSectionEl);
+          setTimeout(function () { playAudio(); }, 400);
+        }, 300);
+      } else {
+        playAudio();
+      }
     }
+    // If not autoPlay, just show the player bar — user can hit play manually
   }
 
   function playAudio() {
