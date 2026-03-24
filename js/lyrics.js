@@ -316,7 +316,8 @@
       var rect = progressWrap.getBoundingClientRect();
       var pct = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
       if (progressFill) progressFill.style.width = (pct * 100) + '%';
-      audio.currentTime = pct * audio.duration;
+      // Store pct for seeking on release — do NOT set audio.currentTime here
+      progressWrap._dragPct = pct;
     }
 
     function startDrag() {
@@ -328,6 +329,11 @@
       if (!isDragging) return;
       isDragging = false;
       progressWrap.classList.remove('dragging');
+      // Seek to the dragged position on release
+      if (audio && audio.duration && progressWrap._dragPct !== undefined) {
+        audio.currentTime = progressWrap._dragPct * audio.duration;
+        delete progressWrap._dragPct;
+      }
     }
 
     /* — Click (unchanged) — */

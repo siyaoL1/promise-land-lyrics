@@ -814,8 +814,20 @@ button {
 
 .audio-player {
   flex-shrink: 0;
+  position: relative;
   padding: 0.4rem 1.25rem 0.15rem;
   background: transparent;
+}
+
+.audio-player::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -2.5rem;
+  height: 2.5rem;
+  background: linear-gradient(to top, rgba(10, 10, 10, 0.6), transparent);
+  pointer-events: none;
 }
 
 .audio-player[hidden] {
@@ -825,7 +837,7 @@ button {
 /* Progress bar */
 .audio-progress-wrap {
   padding: 0.75rem 0;
-  max-width: 70%;
+  max-width: 55%;
   margin: 0 auto;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
