@@ -534,40 +534,40 @@
     "previewTimestamps": [
       {
         "line": 0,
-        "time": 0.0
+        "time": 0.00
       },
       {
         "line": 1,
-        "time": 1.4
+        "time": 1.28
       },
       {
         "line": 2,
-        "time": 2.86
+        "time": 2.74
       },
       {
         "line": 3,
-        "time": 5.44
+        "time": 5.18
       },
       {
         "line": 4,
-        "time": 8.2
+        "time": 10.48
       },
       {
         "line": 5,
-        "time": 9.8
+        "time": 11.60
       },
       {
         "line": 6,
-        "time": 11.4
+        "time": 13.02
       },
       {
         "line": 7,
-        "time": 13.34
+        "time": 16.00
       },
       {
         "section": "Verse 2",
         "line": 0,
-        "time": 19.24
+        "time": 19.18
       },
       {
         "section": "Verse 2",
@@ -577,12 +577,12 @@
       {
         "section": "Verse 2",
         "line": 2,
-        "time": 24.80
+        "time": 24.60
       },
       {
         "section": "Verse 2",
         "line": 3,
-        "time": 27.94
+        "time": 27.66
       }
     ]
   },
