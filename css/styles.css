@@ -955,7 +955,6 @@ button {
 .lyrics-overlay.is-playing .lyrics-line.current {
   opacity: 1;
   color: var(--accent);
-  transform: scale(1.02);
   text-shadow: 0 0 1.2rem rgba(212, 168, 67, 0.18);
 }
 
@@ -986,6 +985,11 @@ button {
 
 .lyrics-overlay.is-syncing .lyrics-line[data-time] .line-play-btn {
   opacity: 0.4;
+}
+
+.lyrics-overlay.is-playing .lyrics-line.current .line-play-btn {
+  opacity: 0;
+  pointer-events: none;
 }
 
 .line-play-btn:hover,
