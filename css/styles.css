@@ -987,10 +987,6 @@ button {
   opacity: 0.4;
 }
 
-.lyrics-overlay.is-playing .lyrics-line.current .line-play-btn {
-  opacity: 0;
-  pointer-events: none;
-}
 
 .line-play-btn:hover,
 .line-play-btn:focus-visible {
