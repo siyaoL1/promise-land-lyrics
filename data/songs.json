@@ -710,35 +710,35 @@
     "previewTimestamps": [
       {
         "line": 0,
-        "time": 2.58
+        "time": 6.5
       },
       {
         "line": 1,
-        "time": 5.9
+        "time": 8.9
       },
       {
         "line": 2,
-        "time": 9.2
+        "time": 11
       },
       {
         "line": 3,
-        "time": 12.5
+        "time": 13.5 
       },
       {
         "line": 4,
-        "time": 15.8
+        "time": 16
       },
       {
         "line": 5,
-        "time": 19.1
+        "time": 18
       },
       {
         "line": 6,
-        "time": 22.4
+        "time": 20.4
       },
       {
         "line": 7,
-        "time": 25.0
+        "time": 22.5
       }
     ]
   },
@@ -858,17 +858,17 @@
       {
         "section": "Bridge",
         "line": 1,
-        "time": 16.36
+        "time": 16.5
       },
       {
         "section": "Bridge",
         "line": 2,
-        "time": 23.90
+        "time": 24
       },
       {
         "section": "Bridge",
         "line": 3,
-        "time": 31.02
+        "time": 32.02
       }
     ]
   },
@@ -1146,56 +1146,20 @@
       }
     ],
     "previewAudio": "assets/audio/john-6-39-preview.mp3",
-    "previewSection": "Verse 1",
+    "previewSection": "Chorus",
     "previewTimestamps": [
-      {
-        "line": 0,
-        "time": 21.5
-      },
-      {
-        "line": 1,
-        "time": 22.6
-      },
-      {
-        "line": 2,
-        "time": 23.7
-      },
-      {
-        "line": 3,
-        "time": 24.8
-      },
-      {
-        "line": 4,
-        "time": 25.9
-      },
-      {
-        "line": 5,
-        "time": 27.0
-      },
-      {
-        "line": 6,
-        "time": 27.6
-      },
-      {
-        "line": 7,
-        "time": 28.4
-      },
-      {
-        "line": 8,
-        "time": 29.5
-      },
-      {
-        "line": 9,
-        "time": 30.3
-      },
-      {
-        "line": 10,
-        "time": 31.4
-      },
-      {
-        "line": 11,
-        "time": 32.5
-      }
+      {"line": 0, "time": 21.50},
+      {"line": 1, "time": 24.02},
+      {"line": 2, "time": 25.14},
+      {"line": 3, "time": 26.04},
+      {"line": 4, "time": 26.88},
+      {"line": 5, "time": 28.68},
+      {"line": 6, "time": 29.68},
+      {"line": 7, "time": 32.56},
+      {"line": 8, "time": 34.58},
+      {"line": 9, "time": 38.14},
+      {"line": 10, "time": 39.96},
+      {"line": 11, "time": 41.42}
     ]
   },
   {
@@ -1542,7 +1506,7 @@
       },
       {
         "line": 1,
-        "time": 4.02
+        "time": 5.5
       },
       {
         "line": 2,
@@ -1550,15 +1514,15 @@
       },
       {
         "line": 3,
-        "time": 16.52
+        "time": 17.5
       },
       {
         "line": 4,
-        "time": 23.34
+        "time": 24
       },
       {
         "line": 5,
-        "time": 27.76
+        "time": 29.5
       },
       {
         "line": 6,
@@ -1566,7 +1530,7 @@
       },
       {
         "line": 7,
-        "time": 39.64
+        "time": 42
       }
     ]
   }
