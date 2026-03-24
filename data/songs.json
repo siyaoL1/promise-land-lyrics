@@ -1149,17 +1149,17 @@
     "previewSection": "Chorus",
     "previewTimestamps": [
       {"line": 0, "time": 21.50},
-      {"line": 1, "time": 24.02},
-      {"line": 2, "time": 25.14},
-      {"line": 3, "time": 26.04},
-      {"line": 4, "time": 26.88},
+      {"line": 1, "time": 22.8},
+      {"line": 2, "time": 24.0},
+      {"line": 3, "time": 25.5},
+      {"line": 4, "time": 27},
       {"line": 5, "time": 28.68},
       {"line": 6, "time": 29.68},
       {"line": 7, "time": 32.56},
-      {"line": 8, "time": 34.58},
-      {"line": 9, "time": 38.14},
-      {"line": 10, "time": 39.96},
-      {"line": 11, "time": 41.42}
+      {"line": 8, "time": 35.2},
+      {"line": 9, "time": 36.3},
+      {"line": 10, "time": 38.5},
+      {"line": 11, "time": 40}
     ]
   },
   {
