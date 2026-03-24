@@ -336,11 +336,7 @@
   }
 
   function scrollToElement(el) {
-    var container = getScrollContainer();
-    var containerRect = container.getBoundingClientRect();
-    var elRect = el.getBoundingClientRect();
-    var offset = elRect.top - containerRect.top - (containerRect.height / 2) + (elRect.height / 2);
-    container.scrollBy({ top: offset, behavior: 'smooth' });
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
   }
 
   function scrollBody(top) {
@@ -349,20 +345,34 @@
   }
 
   /* ── User scroll detection (pause auto-scroll) ─────────────── */
-  body.addEventListener('touchstart', function () {
-    userScrolling = true;
-    if (scrollTimeout) clearTimeout(scrollTimeout);
-  }, { passive: true });
+  function attachScrollDetection(target) {
+    target.addEventListener('touchstart', function () {
+      userScrolling = true;
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+    }, { passive: true });
 
-  body.addEventListener('touchend', function () {
-    scrollTimeout = setTimeout(function () { userScrolling = false; }, 3000);
-  }, { passive: true });
+    target.addEventListener('touchend', function () {
+      scrollTimeout = setTimeout(function () { userScrolling = false; }, 2000);
+    }, { passive: true });
 
-  body.addEventListener('wheel', function () {
-    userScrolling = true;
-    if (scrollTimeout) clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(function () { userScrolling = false; }, 3000);
-  }, { passive: true });
+    target.addEventListener('mousedown', function () {
+      userScrolling = true;
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+    }, { passive: true });
+
+    target.addEventListener('mouseup', function () {
+      scrollTimeout = setTimeout(function () { userScrolling = false; }, 2000);
+    }, { passive: true });
+
+    target.addEventListener('wheel', function () {
+      userScrolling = true;
+      if (scrollTimeout) clearTimeout(scrollTimeout);
+      scrollTimeout = setTimeout(function () { userScrolling = false; }, 2000);
+    }, { passive: true });
+  }
+
+  // Attach to body as fallback
+  attachScrollDetection(body);
 
   /* ── Chinese variant toggle (OpenCC-js) ────────────────────── */
   function initConverters() {
@@ -457,6 +467,12 @@
           autoHideDelay: 800,
         }
       });
+
+      // Attach scroll detection to the OverlayScrollbars viewport
+      var osViewport = lyricsBody.querySelector('.os-viewport');
+      if (osViewport) {
+        attachScrollDetection(osViewport);
+      }
     }
   }
 
