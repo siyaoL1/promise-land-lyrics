@@ -106,23 +106,35 @@
     timestampMap = [];
     previewSectionEl = null;
 
-    // Build a lookup: which section label is the preview section?
-    var previewLabel = song.previewSection || null;
-    // Build timestamp lookup: previewTimestamps is indexed by line within the preview section
+    // Build a lookup: which section label(s) are the preview section?
+    // Support both string and array previewSection
+    var previewLabels = song.previewSection || null;
+    if (typeof previewLabels === 'string') previewLabels = [previewLabels];
+
+    // Build timestamp lookup keyed by "sectionLabel:lineIndex"
     var tsLookup = {};
     if (song.previewTimestamps) {
-      song.previewTimestamps.forEach(function (t) { tsLookup[t.line] = t.time; });
+      song.previewTimestamps.forEach(function (t) {
+        if (t.section) {
+          // New format: {section, line, time}
+          tsLookup[t.section + ':' + t.line] = t.time;
+        } else {
+          // Legacy format: {line, time} — uses first preview section
+          var legacySection = previewLabels ? previewLabels[0] : '';
+          tsLookup[legacySection + ':' + t.line] = t.time;
+        }
+      });
     }
 
     var html = '';
     song.lyrics.forEach(function (section) {
-      var isPreview = previewLabel && section.label === previewLabel;
+      var isPreview = previewLabels && previewLabels.indexOf(section.label) !== -1;
       html += '<div class="lyrics-section"' + (isPreview ? ' data-preview-section="1"' : '') + '>';
       html += '<p class="lyrics-label">' + escHtml(section.label) + '</p>';
       section.lines.forEach(function (line, li) {
         var timeAttr = '';
-        if (isPreview && tsLookup[li] !== undefined) {
-          timeAttr = ' data-time="' + tsLookup[li] + '"';
+        if (isPreview && tsLookup[section.label + ':' + li] !== undefined) {
+          timeAttr = ' data-time="' + tsLookup[section.label + ':' + li] + '"';
         }
         html += '<p class="lyrics-line"' + timeAttr + '>' + escHtml(line) + '</p>';
       });

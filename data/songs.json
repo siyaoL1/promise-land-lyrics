@@ -73,34 +73,41 @@
       }
     ],
     "previewAudio": "assets/audio/i-know-i-know-preview.mp3",
-    "previewSection": "Verse 2",
+    "previewSection": ["Verse 2", "Chorus 3"],
     "previewTimestamps": [
       {
-        "line": 6,
+        "section": "Verse 2",
+        "line": 10,
         "time": 0.0
       },
       {
-        "line": 7,
+        "section": "Verse 2",
+        "line": 11,
         "time": 0.6
       },
       {
-        "line": 8,
+        "section": "Verse 2",
+        "line": 12,
         "time": 1.2
       },
       {
-        "line": 9,
+        "section": "Chorus 3",
+        "line": 0,
         "time": 1.9
       },
       {
-        "line": 10,
+        "section": "Chorus 3",
+        "line": 1,
         "time": 2.4
       },
       {
-        "line": 11,
+        "section": "Chorus 3",
+        "line": 2,
         "time": 3.2
       },
       {
-        "line": 12,
+        "section": "Chorus 3",
+        "line": 3,
         "time": 3.6
       }
     ]
