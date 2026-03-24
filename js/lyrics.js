@@ -300,6 +300,14 @@
     });
   }
 
+  /* ── Spacebar to toggle play/pause ──────────────────────── */
+  document.addEventListener('keydown', function (e) {
+    if (e.code === 'Space' && overlay.getAttribute('aria-hidden') !== 'true' && audio) {
+      e.preventDefault();
+      if (isPlaying) { pauseAudio(); } else { playAudio(); }
+    }
+  });
+
   /* ── Progress bar seeking + drag/swipe ─────────────────────── */
   if (progressWrap) {
     var isDragging = false;
