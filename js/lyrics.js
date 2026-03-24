@@ -293,11 +293,22 @@
 
   /* ── Progress bar seeking ──────────────────────────────────── */
   if (progressWrap) {
-    progressWrap.addEventListener('click', function (e) {
+    function seekToPosition(clientX) {
       if (!audio || !audio.duration) return;
       var rect = progressWrap.getBoundingClientRect();
-      var pct = (e.clientX - rect.left) / rect.width;
+      var pct = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
       audio.currentTime = pct * audio.duration;
+    }
+
+    progressWrap.addEventListener('click', function (e) {
+      seekToPosition(e.clientX);
+    });
+
+    progressWrap.addEventListener('touchstart', function (e) {
+      if (e.touches.length > 0) {
+        e.preventDefault(); // prevent ghost click
+        seekToPosition(e.touches[0].clientX);
+      }
     });
   }
 
