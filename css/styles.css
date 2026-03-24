@@ -883,13 +883,13 @@ button {
   outline: none;
 }
 
-/* Preview toggle */
+/* Preview toggle (in lyrics-controls bar) */
 .preview-toggle {
   display: flex;
   align-items: center;
   gap: 0.35rem;
   cursor: pointer;
-  margin-left: 0.5rem;
+  margin-right: 0.25rem;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -982,13 +982,8 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
-.lyrics-overlay.is-syncing .lyrics-line.current .line-play-btn,
-.lyrics-overlay.is-syncing .lyrics-line.near-current .line-play-btn {
-  opacity: 0.5;
-}
-
-.lyrics-overlay.is-syncing .lyrics-line.current .line-play-btn {
-  opacity: 0.7;
+.lyrics-overlay.is-syncing .lyrics-line[data-time] .line-play-btn {
+  opacity: 0.4;
 }
 
 .line-play-btn:hover,
@@ -1001,8 +996,5 @@ button {
 @media (hover: none) {
   .lyrics-overlay.is-syncing .lyrics-line[data-time] .line-play-btn {
     opacity: 0.4;
-  }
-  .lyrics-overlay.is-syncing .lyrics-line.current .line-play-btn {
-    opacity: 0.7;
   }
 }
