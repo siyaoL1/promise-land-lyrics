@@ -80,6 +80,27 @@
       <div class="lyrics-body">
         <div class="lyrics-content"></div>
       </div>
+      <!-- Audio player bar -->
+      <div class="audio-player" id="audio-player" hidden>
+        <div class="audio-progress-wrap">
+          <div class="audio-progress-track">
+            <div class="audio-progress-fill" id="audio-progress-fill"></div>
+          </div>
+        </div>
+        <div class="audio-controls-row">
+          <span class="audio-time" id="audio-time-current">0:00</span>
+          <button class="audio-play-btn" id="audio-play-btn" type="button" aria-label="Play preview">
+            <svg class="audio-icon-play" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><polygon points="6,3 20,12 6,21"/></svg>
+            <svg class="audio-icon-pause" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" style="display:none"><rect x="5" y="3" width="4" height="18"/><rect x="15" y="3" width="4" height="18"/></svg>
+          </button>
+          <span class="audio-time" id="audio-time-total">0:00</span>
+          <label class="preview-toggle" id="preview-toggle">
+            <input type="checkbox" id="preview-toggle-input" checked>
+            <span class="preview-toggle-track"></span>
+            <span class="preview-toggle-label">Preview</span>
+          </label>
+        </div>
+      </div>
       <div class="lyrics-controls">
         <button data-action="convert" type="button" aria-label="Switch to traditional Chinese">简/繁</button>
         <button data-action="size-down" type="button" aria-label="Decrease text size">A−</button>
