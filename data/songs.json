@@ -5,114 +5,102 @@
     "artist": "Lionzed",
     "lyrics": [
       {
-        "type": "hook",
-        "label": "Hook",
+        "type": "chorus",
+        "label": "Chorus",
         "lines": [
-          "I know I know I know he’s got it all",
-          "I know I know I know he’s got it all",
-          "I know I know I know he’s got it all",
-          "I know I know I know he’s got it all"
+          "I know I know I know he's got it all",
+          "I know I know I know he's got it all",
+          "I know I know I know he's got it all",
+          "I know I know I know he's got it all"
         ]
       },
       {
         "type": "verse",
         "label": "Verse 1",
         "lines": [
-          "When I’m trapped in the darkness",
-          "I don’t know where I could go",
-          "feel like I’m becoming heartless",
+          "When I'm trapped in the darkness",
+          "I don't know where I could go",
+          "feel like I'm becoming heartless",
           "Losing my spirit and soul",
           "In the midst of these attacks",
           "You are my living hope",
           "Keep this fire burning inside of me",
-          "Never turn it cold"
+          "Never turn it cold",
+          "Cause even though my life goes on you stay the same",
+          "Promise you'll be with me through seasons of change",
+          "Guard my heart above it all until I see your face Lord",
+          "I pray on that day you would call me the faithful cause"
+        ]
+      },
+      {
+        "type": "chorus",
+        "label": "Chorus 2",
+        "lines": [
+          "I know I know I know you've got it all",
+          "I know I know I know you've got it all",
+          "I know I know I know you've got it all",
+          "I know I know I know you've got it all"
         ]
       },
       {
         "type": "verse",
         "label": "Verse 2",
         "lines": [
-          "Cause even though my life goes on you stay the same",
-          "Promise you’ll be with me through seasons of change",
-          "Guard my heart above it all until I see your face Lord",
-          "I pray on that day you would call me the faithful cause"
-        ]
-      },
-      {
-        "type": "hook",
-        "label": "Hook 2",
-        "lines": [
-          "I know I know I know you’ve got it all",
-          "I know I know I know you’ve got it all",
-          "I know I know I know you’ve got it all",
-          "I know I know I know you’ve got it all"
-        ]
-      },
-      {
-        "type": "verse",
-        "label": "Verse 3",
-        "lines": [
           "2016到2025 过了今天我就9岁了",
           "这份感动是久违的",
           "看看身边还有谁呢",
           "浪子回头的浪子对父亲心中还是有亏的",
           "可你却为我举办宴席",
-          "说我不再是有罪的"
-        ]
-      },
-      {
-        "type": "bridge",
-        "label": "Bridge",
-        "lines": [
+          "说我不再是有罪的",
           "So when the light goes off and beat turns on",
           "Stop thinking what might goes wrong",
-          "Write those songs I feel like boy I’m still so young",
-          "But That’s okay",
+          "Write those songs I feel like boy I'm still so young",
+          "But That's okay",
           "Everyday is a gift from above",
-          "So I’ll take over my place",
-          "And I’ll praise"
+          "So I'll take over my place",
+          "And I'll praise"
         ]
       },
       {
-        "type": "hook",
-        "label": "Hook 3",
+        "type": "chorus",
+        "label": "Chorus 3",
         "lines": [
-          "I know I know I know you’ve got it all",
-          "I know I know I know you’ve got it all",
-          "I know I know I know you’ve got it all",
-          "I know I know I know you’ve got it all"
+          "I know I know I know you've got it all",
+          "I know I know I know you've got it all",
+          "I know I know I know you've got it all",
+          "I know I know I know you've got it all"
         ]
       }
     ],
     "previewAudio": "assets/audio/i-know-i-know-preview.mp3",
-    "previewSection": "Bridge",
+    "previewSection": "Verse 2",
     "previewTimestamps": [
       {
-        "line": 0,
+        "line": 6,
         "time": 0.0
       },
       {
-        "line": 1,
+        "line": 7,
         "time": 0.6
       },
       {
-        "line": 2,
+        "line": 8,
         "time": 1.2
       },
       {
-        "line": 3,
+        "line": 9,
         "time": 1.9
       },
       {
-        "line": 4,
+        "line": 10,
         "time": 2.4
       },
       {
-        "line": 5,
+        "line": 11,
         "time": 3.2
       },
       {
-        "line": 6,
+        "line": 12,
         "time": 3.6
       }
     ]
@@ -148,80 +136,68 @@
           "我的心有多诡诈",
           "我的神就有更伟大",
           "十字上的救恩是once and for all",
-          "That‘s what he came for"
+          "That's what he came for",
+          "我知道前面还有很长的路",
+          "不过还好我的神靠的住",
+          "不过还好我的神靠的住",
+          "I gotta do the right thing  I can't afford to lose",
+          "I know I got many options",
+          "But I can't afford to choose",
+          "I choose God all times",
+          "Because he chose me first",
+          "Jesus marries the church",
+          "Eden can be reversed",
+          "So when my flesh got put into the dirt",
+          "One day I'll be resurrected like Jesus did it's been the plan since his birth",
+          "Being born through a virgin",
+          "I know he's determined my calling and my mission on earth",
+          "God put his spirit in me, so now I put his word in my verse"
         ]
       },
       {
-        "type": "hook",
-        "label": "Hook",
+        "type": "chorus",
+        "label": "Chorus",
         "lines": [
-          "我知道前面还有很长的路",
-          "不过还好我的神靠的住",
-          "不过还好我的神靠的住"
+          "Have you ever tasted",
+          "God's love for the world",
+          "He never leaves you",
+          "Never forsake you",
+          "Never betray you",
+          "He loves you and loves you till the end",
+          "He'll love you till the end"
         ]
       },
       {
         "type": "verse",
         "label": "Verse 2",
         "lines": [
-          "I gotta do the right thing",
-          "I can’t afford to lose",
-          "I know I got many options",
-          "But I can’t afford to choose",
-          "I choose God all times",
-          "Because he chose me first",
-          "Jesus marries the church",
-          "Eden can be reversed",
-          "So when my flesh got put into the dirt",
-          "One day I’ll be resurrected like Jesus did it’s been the plan since his birth",
-          "Being born through a virgin",
-          "I know he’s determined my calling and my mission on earth",
-          "God put his spirit in me, so now I put his word in my verse"
-        ]
-      },
-      {
-        "type": "bridge",
-        "label": "Bridge",
-        "lines": [
-          "Have you ever tasted",
-          "God’s love for the world",
-          "He never leaves you",
-          "Never forsake you",
-          "Never betray you",
-          "He loves"
-        ]
-      },
-      {
-        "type": "verse",
-        "label": "Verse 3",
-        "lines": [
           "多少个夜晚 多少个无助",
           "多少的罪恶 我深陷这泥潭 我",
-          "无法把自己挣脱",
+          "无法把自己挟脱",
           "但是没关系",
           "我知道我的神仍在看着我",
-          "祂的爱包裹着我",
+          "祢的爱包裹着我",
           "即使在最黑暗的时刻",
           "黑夜如白昼",
           "Do you know what I know",
           "当我听到了福音He came and work in my soul",
           "我要做神的messenger永远不做Idol",
           "三条6我把它按下离开牌桌最",
-          "大的nice fold"
+          "大的nice fold",
+          "So Why don't you try this out",
+          "Pray to my Lord",
+          "耶稣的恩典还够",
+          "We got judges in the court guilty or not",
+          "but who gon decides yours",
+          "Prodigal son 快回家吧回来领受神儿子的title"
         ]
       },
       {
         "type": "outro",
         "label": "Outro",
         "lines": [
-          "So Why don’t you try this out",
-          "Pray to my Lord",
-          "耶稣的恩典还够",
-          "We got judges in the court guilty or not",
-          "but who gon decides yours",
-          "Prodigal son 快回家吧回来领受神儿子的title",
           "耶稣来过",
-          "祂还会来",
+          "祢还会来",
           "Run the race with me"
         ]
       }
@@ -314,13 +290,7 @@
           "你问我罪人怎能变成新的",
           "我告诉你这代价很贵",
           "高过这世界上所有的金子",
-          "用羔羊的血祂洗净了罪"
-        ]
-      },
-      {
-        "type": "verse",
-        "label": "Verse 2",
-        "lines": [
+          "用羔羊的血祂洗净了罪",
           "见过太多东西可我从来没变过",
           "每当夜晚降临当我深陷罪恶的漩涡",
           "我都拿出圣经",
@@ -329,13 +299,7 @@
           "他们想要听到punchline",
           "可我讲耶稣他们ask why",
           "不知道什么时候来到你的last time",
-          "我做的音乐开始跨时代"
-        ]
-      },
-      {
-        "type": "verse",
-        "label": "Verse 3",
-        "lines": [
+          "我做的音乐开始跨时代",
           "圣灵的宝剑我拿起了武器",
           "从跪下的那天我打定了主意",
           "弟兄和姊妹都给予我鼓励",
@@ -350,27 +314,27 @@
         "type": "chorus",
         "label": "Chorus",
         "lines": [
-          "There’s a war outside",
-          "There’s a war in the sky",
+          "There's a war outside",
+          "There's a war in the sky",
           "better pick your side",
-          "We don’t got much time",
-          "There’s a war outside",
-          "There’s a war in the sky",
+          "We don't got much time",
+          "There's a war outside",
+          "There's a war in the sky",
           "Battle has been won",
           "Lamb is still alive",
-          "There’s a war outside",
-          "There’s a war in the sky",
+          "There's a war outside",
+          "There's a war in the sky",
           "Better pick your side",
-          "We don’t got much time",
-          "There’s a war outside",
-          "There’s a war in the sky",
+          "We don't got much time",
+          "There's a war outside",
+          "There's a war in the sky",
           "Battle has been won",
           "Lamb is still alive"
         ]
       },
       {
         "type": "verse",
-        "label": "Verse 4",
+        "label": "Verse 2",
         "lines": [
           "说了太多天上的事儿",
           "我现在回到了地上",
@@ -379,13 +343,7 @@
           "可我看到年轻一代的回转",
           "我想这是复兴的迹象",
           "所以你问我今年怎么变化这么大",
-          "这是来自天上的力量"
-        ]
-      },
-      {
-        "type": "bridge",
-        "label": "Bridge",
-        "lines": [
+          "这是来自天上的力量",
           "你以为我是软柿子捏",
           "把你们全部都斩了直接",
           "一年前神说我需要时间",
@@ -394,8 +352,8 @@
           "说实话实力都太弱了",
           "为什么不站在儿子的位置",
           "难道你想耶稣做的是白做的",
-          "Lionzed be killing the game but I ain’t beast nor animal",
-          "making the greatest hit but I don’t use any chemical",
+          "Lionzed be killing the game but I ain't beast nor animal",
+          "making the greatest hit but I don't use any chemical",
           "神啊你对我的旨意我再也不会去追问",
           "高山或低谷都Amen",
           "但如果这真是我的命",
@@ -603,24 +561,24 @@
     "artist": "Lionzed",
     "lyrics": [
       {
-        "type": "hook",
-        "label": "Hook",
+        "type": "chorus",
+        "label": "Chorus",
         "lines": [
           "Save my people from the fire",
           "Save my people from the fire",
-          "Lord that’s my only desire",
-          "Lord that’s my only desire",
+          "Lord that's my only desire",
+          "Lord that's my only desire",
           "Save my people from the fire",
           "Save my people from the fire",
-          "Lord that’s my only desire",
-          "Lord that’s my only desire"
+          "Lord that's my only desire",
+          "Lord that's my only desire"
         ]
       },
       {
         "type": "verse",
         "label": "Verse 1",
         "lines": [
-          "They don’t know",
+          "They don't know",
           "Where do they go",
           "闭上双眼",
           "在生命的最后",
@@ -635,13 +593,7 @@
           "但我看得清",
           "谁在我的背后",
           "我虽然软弱",
-          "But he faithful"
-        ]
-      },
-      {
-        "type": "verse",
-        "label": "Verse 2",
-        "lines": [
+          "But he faithful",
           "莫名的力量",
           "把我的beat 放",
           "灵里燃起火焰",
@@ -664,22 +616,22 @@
         ]
       },
       {
-        "type": "hook",
-        "label": "Hook 2",
+        "type": "chorus",
+        "label": "Chorus 2",
         "lines": [
           "Save my people from the fire",
           "Save my people from the fire",
-          "Lord that’s my only desire",
-          "Lord that’s my only desire",
+          "Lord that's my only desire",
+          "Lord that's my only desire",
           "Save my people from the fire",
           "Save my people from the fire",
-          "Lord that’s my only desire",
-          "Lord that’s my only desire"
+          "Lord that's my only desire",
+          "Lord that's my only desire"
         ]
       },
       {
-        "type": "bridge",
-        "label": "Bridge",
+        "type": "verse",
+        "label": "Verse 2",
         "lines": [
           "门是窄的 我想过",
           "可他们大多数",
@@ -708,22 +660,22 @@
         ]
       },
       {
-        "type": "hook",
-        "label": "Hook 3",
+        "type": "chorus",
+        "label": "Chorus 3",
         "lines": [
           "Save my people from the fire",
           "Save my people from the fire",
-          "Lord that’s my only desire",
-          "Lord that’s my only desire",
+          "Lord that's my only desire",
+          "Lord that's my only desire",
           "Save my people from the fire",
           "Save my people from the fire",
-          "Lord that’s my only desire",
-          "Lord that’s my only desire"
+          "Lord that's my only desire",
+          "Lord that's my only desire"
         ]
       }
     ],
     "previewAudio": "assets/audio/save-my-people-from-the-fire-preview.mp3",
-    "previewSection": "Hook 3",
+    "previewSection": "Chorus 3",
     "previewTimestamps": [
       {
         "line": 0,
@@ -929,16 +881,16 @@
     "artist": "Lionzed",
     "lyrics": [
       {
-        "type": "hook",
-        "label": "Hook",
+        "type": "chorus",
+        "label": "Chorus",
         "lines": [
-          "I can’t write these songs oh God does",
-          "I’m not the only one I’m the one plus",
+          "I can't write these songs oh God does",
+          "I'm not the only one I'm the one plus",
           "Lord in your name oh I trust",
           "Your love is enough",
           "Your love is enough",
-          "I don’t write these songs oh God does",
-          "I’m not the only one I’m the one plus",
+          "I don't write these songs oh God does",
+          "I'm not the only one I'm the one plus",
           "Lord in your name oh I trust",
           "Your love is enough",
           "More than enough"
@@ -949,20 +901,20 @@
         "label": "Verse 1",
         "lines": [
           "I cannot write these songs on my own",
-          "全部倚靠着the one who’s on the throne yeah",
+          "全部倚靠着the one who's on the throne yeah",
           "你触摸我的灵每一次感动",
           "I know I will never be alone",
           "读着你的话语伴随着海风",
           "Thinking bout you 我望向天空",
           "看到一片彩虹",
-          "I know you’ll keep your promise",
-          "You know I’m counting on it",
-          "That you’ll never let me go"
+          "I know you'll keep your promise",
+          "You know I'm counting on it",
+          "That you'll never let me go"
         ]
       },
       {
-        "type": "bridge",
-        "label": "Bridge",
+        "type": "pre-chorus",
+        "label": "Pre-chorus",
         "lines": [
           "Oh",
           "You drag me out of darkness",
@@ -974,15 +926,15 @@
       },
       {
         "type": "chorus",
-        "label": "Chorus",
+        "label": "Chorus 2",
         "lines": [
-          "I don’t write these songs oh God does",
-          "I’m not the only one I’m the one plus",
+          "I don't write these songs oh God does",
+          "I'm not the only one I'm the one plus",
           "Lord in your name oh I trust",
           "Your love is enough",
           "Your love is enough",
-          "I don’t write these songs oh God does",
-          "I’m not the only one I’m the one plus",
+          "I don't write these songs oh God does",
+          "I'm not the only one I'm the one plus",
           "Lord in your name oh I trust",
           "Your love is enough",
           "More than enough"
@@ -993,7 +945,7 @@
         "label": "Verse 2",
         "lines": [
           "I was dead before",
-          "Don’t know what I was trying for",
+          "Don't know what I was trying for",
           "Lord you saved my life",
           "Now that I am 24",
           "Got some up and downs",
@@ -1001,15 +953,15 @@
           "最大的恩典是",
           "你从没有放弃我",
           "我什么都给不了你只能offer you my life",
-          "You are my God you my King you are my love you’re the light",
+          "You are my God you my King you are my love you're the light",
           "I wanna sing you another song",
           "For righting all my wrongs",
           "For putting on my crown"
         ]
       },
       {
-        "type": "bridge",
-        "label": "Bridge 2",
+        "type": "pre-chorus",
+        "label": "Pre-Chorus 2",
         "lines": [
           "Oh",
           "You drag me out of darkness",
@@ -1021,15 +973,15 @@
       },
       {
         "type": "chorus",
-        "label": "Chorus 2",
+        "label": "Chorus 3",
         "lines": [
-          "I don’t write these songs oh God does",
-          "I’m not the only one I’m the one plus",
+          "I don't write these songs oh God does",
+          "I'm not the only one I'm the one plus",
           "Lord in your name oh I trust",
           "Your love is enough",
           "Your love is enough",
-          "I don’t write these songs oh God does",
-          "I’m not the only one I’m the one plus",
+          "I don't write these songs oh God does",
+          "I'm not the only one I'm the one plus",
           "Lord in your name oh I trust",
           "Your love is enough",
           "More than enough"
@@ -1087,8 +1039,8 @@
     "artist": "Lionzed",
     "lyrics": [
       {
-        "type": "verse",
-        "label": "Verse 1",
+        "type": "chorus",
+        "label": "Chorus",
         "lines": [
           "多少次我跌倒",
           "坠入深渊",
@@ -1106,7 +1058,7 @@
       },
       {
         "type": "verse",
-        "label": "Verse 2",
+        "label": "Verse 1",
         "lines": [
           "每一次我跌倒",
           "你都在我身边",
@@ -1127,7 +1079,7 @@
       },
       {
         "type": "chorus",
-        "label": "Chorus",
+        "label": "Chorus 2",
         "lines": [
           "多少次我跌倒",
           "坠入深渊",
@@ -1144,8 +1096,8 @@
         ]
       },
       {
-        "type": "bridge",
-        "label": "Bridge",
+        "type": "verse",
+        "label": "Verse 2",
         "lines": [
           "洁白的羔羊",
           "带走我的罪",
@@ -1163,17 +1115,23 @@
           "名字被祂记在这生命册里",
           "祂等我",
           "几年时间对这世界感到boring",
-          "绕了一圈我却又回到原地",
-          "I spent four years getting lost in the wilderness don’t know where to go",
+          "绕了一圈我却又回到原地"
+        ]
+      },
+      {
+        "type": "bridge",
+        "label": "Bridge",
+        "lines": [
+          "I spent four years getting lost in the wilderness don't know where to go",
           "You lead me home",
           "You deserve my life",
-          "I’ll give it to you and take on my cross",
+          "I'll give it to you and take on my cross",
           "You are my God"
         ]
       },
       {
-        "type": "outro",
-        "label": "Outro",
+        "type": "chorus",
+        "label": "Chorus 3",
         "lines": [
           "多少次我跌倒",
           "坠入深渊",
@@ -1249,23 +1207,23 @@
     "artist": "Lionzed",
     "lyrics": [
       {
-        "type": "verse",
-        "label": "Verse 1",
+        "type": "chorus",
+        "label": "Chorus",
         "lines": [
           "what comes up must come down",
           "Got me thinking about my old days",
           "I was young when I leave the town",
-          "But I‘ll be with you always",
-          "I used to be the one who call my folks around",
-          "I used to be a boy who like to sing a song",
-          "I used to be the one who always dream big",
-          "Now I become a man who wanna be free"
+          "But I'll be with you always"
         ]
       },
       {
         "type": "verse",
-        "label": "Verse 2",
+        "label": "Verse 1",
         "lines": [
+          "I used to be the one who call my folks around",
+          "I used to be a boy who like to sing a song",
+          "I used to be the one who always dream big",
+          "Now I become a man who wanna be free",
           "Free from pressure, and free from fame",
           "free from caring lemme out of this game",
           "All my treasures let it be your name",
@@ -1276,17 +1234,17 @@
       },
       {
         "type": "chorus",
-        "label": "Chorus",
+        "label": "Chorus 2",
         "lines": [
           "what comes up must come down",
           "Got me thinking about my old days",
           "I was young when I leave the town",
-          "But I‘ll be with you always"
+          "But I'll be with you always"
         ]
       },
       {
-        "type": "bridge",
-        "label": "Bridge",
+        "type": "verse",
+        "label": "Verse 2",
         "lines": [
           "So many people I found,",
           "and so many people I lost,",
@@ -1299,22 +1257,22 @@
           "Can I have you back",
           "Are you really gone",
           "Can I have you back",
-          "Please don’t leave me here"
+          "Please don't leave me here"
         ]
       },
       {
-        "type": "outro",
-        "label": "Outro",
+        "type": "chorus",
+        "label": "Chorus 3",
         "lines": [
           "what comes up must come down",
           "Got me thinking about my old days",
           "I was young when I leave the town",
-          "But I‘ll be with you always"
+          "But I'll be with you always"
         ]
       }
     ],
     "previewAudio": "assets/audio/turns-preview.mp3",
-    "previewSection": "Verse 1",
+    "previewSection": "Chorus",
     "previewTimestamps": [
       {
         "line": 0,
@@ -1350,13 +1308,7 @@
           "祂给了你所有的爱",
           "祂敲着你的心门在外默默地等待",
           "一本几千岁的书记录了这爱的故事",
-          "我现在跟你讲讲 这故事的梗概"
-        ]
-      },
-      {
-        "type": "verse",
-        "label": "Verse 2",
-        "lines": [
+          "我现在跟你讲讲 这故事的梗概",
           "神创造世间万物",
           "也创造你我",
           "一切本美好",
@@ -1370,13 +1322,7 @@
           "写在字里 行间",
           "你知晓人会背叛",
           "可是你仍来到我们中间",
-          "那不是一个寒冷的冬天"
-        ]
-      },
-      {
-        "type": "bridge",
-        "label": "Bridge",
-        "lines": [
+          "那不是一个寒冷的冬天",
           "神爱世人",
           "甚至把他的独生子赐给他们，",
           "叫一切信他的，不至灭亡，反得永生",
@@ -1402,7 +1348,7 @@
       },
       {
         "type": "verse",
-        "label": "Verse 3",
+        "label": "Verse 2",
         "lines": [
           "他从不曾改变",
           "他永远是基督",
@@ -1421,18 +1367,21 @@
           "我悔改认罪每一次对你的背叛",
           "我在你面前放下你给我的桂冠",
           "只求你点燃我内心的火回到",
-          "day one"
-        ]
-      },
-      {
-        "type": "outro",
-        "label": "Outro",
-        "lines": [
+          "day one",
           "我永远不会忘记认识你的那天",
           "你拯救我脱离的一切超越了时间",
           "我不想输 因为有太多人对我有期待",
           "如果我赢了",
           "那也是因为撒旦早被耶稣击败"
+        ]
+      },
+      {
+        "type": "chorus",
+        "label": "Chorus 2",
+        "lines": [
+          "You are worthy of our praise",
+          "You are worthy of our praise",
+          "You are worthy of our praise"
         ]
       }
     ],
@@ -1454,133 +1403,6 @@
     ]
   },
   {
-    "id": "abba-abba",
-    "title": "阿爸阿爸",
-    "artist": "Lionzed feat. LEO YDL",
-    "lyrics": [
-      {
-        "type": "verse",
-        "label": "Verse 1 — Lionzed",
-        "lines": [
-          "You bring the lost one back you never 放弃",
-          "I feel your love is always around me",
-          "When I fall down you are there to catch me",
-          "我犯过的错你却说早已忘记",
-          "我出了旷野不再站在你的对面",
-          "你拯救我脱离了黑暗中的每个危险",
-          "所以我默想你说过的话",
-          "把它挂在嘴边",
-          "行走它在每天",
-          "I can hear your saying",
-          "You will never let me go",
-          "Oh God pull me closer",
-          "You know I need you the most",
-          "When I’m lost in darkness",
-          "走不出来的迷宫",
-          "I will say",
-          "I say"
-        ]
-      },
-      {
-        "type": "hook",
-        "label": "Hook",
-        "lines": [
-          "Abba",
-          "Abba",
-          "Abba",
-          "Abba",
-          "Abba",
-          "Abba",
-          "你的爱永不离开我",
-          "我",
-          "Abba",
-          "Abba",
-          "Abba",
-          "Abba",
-          "Abba",
-          "你的爱永不离开我",
-          "我"
-        ]
-      },
-      {
-        "type": "verse",
-        "label": "Verse 2 — LEO YDL",
-        "lines": [
-          "God pull me closer",
-          "I need some closure yeah",
-          "All these cold nights",
-          "All I wanted was a shoulder",
-          "有你在身边陪我爬过了那些黄土坡",
-          "现在没有什么困难真正能够阻挡我",
-          "You gave me confidence",
-          "To boost my power yeah",
-          "Spread the words to all these lonely kids finding shelters",
-          "听见了感动，尽我所能想为你唱首歌",
-          "那些藏在心底最痛的伤现在也不怕说了",
-          "经历了多少波折",
-          "在寻找你的路上",
-          "想回到你的怀抱",
-          "但又为什么一直拖着",
-          "感谢狮子引领又一次和你汇合",
-          "原来你也从没离开过",
-          "我也清楚为什么而活"
-        ]
-      },
-      {
-        "type": "bridge",
-        "label": "Bridge",
-        "lines": [
-          "ok",
-          "yeah yeah I‘ m blessed to see another day",
-          "你帮我做的选择， yeah 我不后悔",
-          "迷路的孩子是时候了，擦干泪水",
-          "有更大的祝福 bigger than the world 需要你去追随"
-        ]
-      },
-      {
-        "type": "chorus",
-        "label": "Chorus",
-        "lines": [
-          "Abba",
-          "Abba",
-          "Abba",
-          "Abba",
-          "Abba",
-          "Abba",
-          "你的爱永不离开我",
-          "God pull me closer, I need some closure，yeah",
-          "我",
-          "You gave me confidence and boost my power yeah",
-          "Abba",
-          "Abba",
-          "Abba",
-          "Abba",
-          "Abba",
-          "你的爱永不离开我",
-          "God pull me closer, I need some closure，yeah",
-          "我",
-          "You gave me confidence and boost my power，yeah",
-          "Abba",
-          "Abba",
-          "Abba",
-          "Abba",
-          "Abba",
-          "Abba",
-          "你的爱永不离开我",
-          "God pull me closer, I need some closure，yeah",
-          "我",
-          "You gave me confidence and boost my power，yeah",
-          "Abba",
-          "Abba",
-          "Abba",
-          "Abba",
-          "Abba",
-          "你的爱永不离开我"
-        ]
-      }
-    ]
-  },
-  {
     "id": "tell-me-god",
     "title": "Tell me God",
     "artist": "Lionzed",
@@ -1591,7 +1413,7 @@
         "lines": [
           "My God tell me where to go",
           "oh Tell me what does the future hold",
-          "You’re the maker of the universe and",
+          "You're the maker of the universe and",
           "you know me by my name",
           "Your love is the cure for my soul"
         ]
@@ -1602,14 +1424,14 @@
         "lines": [
           "My God tell me where to go",
           "Tell me what does the future hold",
-          "You’re the maker of the universe and you",
+          "You're the maker of the universe and you",
           "know me by my name",
           "Your love is the cure for my soul"
         ]
       },
       {
         "type": "verse",
-        "label": "Verse 1",
+        "label": "Verse",
         "lines": [
           "你从一本造出 万族的人",
           "预先定准",
@@ -1626,8 +1448,8 @@
         ]
       },
       {
-        "type": "bridge",
-        "label": "Bridge",
+        "type": "pre-chorus",
+        "label": "Pre-Chorus",
         "lines": [
           "If my God is with me who I shall be afraid of",
           "If my God is with me who I shall be afraid of",
@@ -1641,23 +1463,29 @@
         "lines": [
           "My God tell me where to go",
           "oh Tell me what does the future hold",
-          "You’re the maker of the universe and",
+          "You're the maker of the universe and",
           "you know me by my name",
           "Your love is the cure for my soul"
         ]
       },
       {
-        "type": "outro",
-        "label": "Outro",
+        "type": "bridge",
+        "label": "Bridge",
         "lines": [
           "till the end",
           "Till the end",
           "Till the end",
-          "You’re the maker of the universe and you know me by my name",
-          "Your love is the cure of my soul",
+          "You're the maker of the universe and you know me by my name",
+          "Your love is the cure of my soul"
+        ]
+      },
+      {
+        "type": "chorus",
+        "label": "Chorus 4",
+        "lines": [
           "My God tell me where to go",
           "Tell me what does the future hold",
-          "You’re the maker of the universe and you",
+          "You're the maker of the universe and you",
           "know me by my name",
           "Your love is the cure for my soul"
         ]
