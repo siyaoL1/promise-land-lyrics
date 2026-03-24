@@ -83,32 +83,32 @@
       {
         "section": "Verse 2",
         "line": 11,
-        "time": 0.6
+        "time": 2
       },
       {
         "section": "Verse 2",
         "line": 12,
-        "time": 1.2
+        "time": 2.5
       },
       {
         "section": "Chorus 3",
         "line": 0,
-        "time": 1.9
+        "time": 4.8
       },
       {
         "section": "Chorus 3",
         "line": 1,
-        "time": 2.4
+        "time": 11
       },
       {
         "section": "Chorus 3",
         "line": 2,
-        "time": 3.2
+        "time": 17.5
       },
       {
         "section": "Chorus 3",
         "line": 3,
-        "time": 3.6
+        "time": 22.9
       }
     ]
   },
@@ -271,6 +271,10 @@
       {
         "line": 14,
         "time": 21.16
+      },
+      {
+        "line": 15,
+        "time": 22.5
       }
     ]
   },
