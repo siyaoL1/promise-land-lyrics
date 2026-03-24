@@ -252,8 +252,6 @@
     }
     if (audio) {
       audio.pause();
-      audio.removeAttribute('src');
-      audio.load();
       audio = null;
     }
     isPlaying = false;
@@ -261,6 +259,7 @@
     overlay.classList.remove('is-playing');
     if (scrollTimeout) clearTimeout(scrollTimeout);
     showPlayIcon();
+    if (playerBar) playerBar.setAttribute('hidden', '');
     resetPlayerUI();
   }
 
