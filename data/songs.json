@@ -530,7 +530,7 @@
       }
     ],
     "previewAudio": "assets/audio/if-you-only-had-15-minutes-preview.mp3",
-    "previewSection": "Hook",
+    "previewSection": ["Hook", "Verse 2"],
     "previewTimestamps": [
       {
         "line": 0,
@@ -563,6 +563,26 @@
       {
         "line": 7,
         "time": 13.34
+      },
+      {
+        "section": "Verse 2",
+        "line": 0,
+        "time": 19.24
+      },
+      {
+        "section": "Verse 2",
+        "line": 1,
+        "time": 22.04
+      },
+      {
+        "section": "Verse 2",
+        "line": 2,
+        "time": 24.80
+      },
+      {
+        "section": "Verse 2",
+        "line": 3,
+        "time": 27.94
       }
     ]
   },
