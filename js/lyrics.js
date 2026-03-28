@@ -49,10 +49,10 @@
     .then(d => { songsData = d; })
     .catch(e => console.error('Failed to load songs:', e));
 
-  /* ── preview mode (sessionStorage, default ON) ─────────────── */
+  /* ── preview mode (sessionStorage, default OFF) ─────────────── */
   function isPreviewOn() {
     var v = sessionStorage.getItem('previewMode');
-    return v === null ? true : v === 'on';
+    return v === null ? false : v === 'on';
   }
 
   function setPreviewMode(on) {
