@@ -49,10 +49,30 @@
     .then(d => { songsData = d; })
     .catch(e => console.error('Failed to load songs:', e));
 
-  /* ── preview mode (sessionStorage, default OFF) ─────────────── */
+  /* ── preview mode (sessionStorage, time-based default) ───────── */
+  /*  Default OFF between 6:30 PM – midnight ET on Mar 28 2026,    */
+  /*  default ON at all other times.                                */
+  function getPreviewDefault() {
+    var now = new Date();
+    // Convert to Eastern Time (America/New_York)
+    var etStr = now.toLocaleString('en-US', { timeZone: 'America/New_York' });
+    var et = new Date(etStr);
+    var year = et.getFullYear();
+    var month = et.getMonth(); // 0-indexed, March = 2
+    var day = et.getDate();
+    var hours = et.getHours();
+    var minutes = et.getMinutes();
+    var timeInMinutes = hours * 60 + minutes;
+    // Mar 28 2026, 6:30 PM (18:30) – midnight (24:00) ET → default OFF
+    if (year === 2026 && month === 2 && day === 28 && timeInMinutes >= 1110) {
+      return false;
+    }
+    return true;
+  }
+
   function isPreviewOn() {
     var v = sessionStorage.getItem('previewMode');
-    return v === null ? false : v === 'on';
+    return v === null ? getPreviewDefault() : v === 'on';
   }
 
   function setPreviewMode(on) {
